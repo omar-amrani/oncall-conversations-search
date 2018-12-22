@@ -70,6 +70,10 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
 end
+
+group :production do
+  gem "pg"
+end
 #rspec gem
 gem 'rspec-rails'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
