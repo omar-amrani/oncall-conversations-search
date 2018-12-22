@@ -1,0 +1,42 @@
+<div class="container ">
+  <div class="card text-center main-card">
+    <div class="card-block">
+      <% @conversation.conversation_parts.each do |conversation_part| %>
+        <% unless conversation_part.author.image_url.nil? %>
+          <% image_src = conversation_part.author.image_url %>
+        <% else %>
+          <% image_src = "user_logo.png" %>
+        <% end %>
+        <% if conversation_part.author.author_type == "admin" %>
+          <div class="d-flex justify-content-end">
+            <div class="card text-left admin-message">
+              <div class="card-body">
+                <div class="card-text"><%== Rails::Html::WhiteListSanitizer.new.sanitize(conversation_part.conversation_part_body, tags: %w(img ul li a p)) %></div>
+              </div>
+            </div>
+            <div class="admin-profile-picture">
+              <%= image_tag(image_src, alt: conversation_part.author.name, title: conversation_part.author.name, class: "img-circle", size: "40x40") %>
+            </div>
+          </div>
+          <div class="d-flex justify-content-end admin-timestamp">
+            <small><%= time_ago_in_words(conversation_part.creation_date) %> ago</small>
+          </div>
+        <% else %>
+          <div class="row">
+            <div class="user-profile-picture"> <%= image_tag(image_src, alt: conversation_part.author.name, title: conversation_part.author.name, class: "img-circle", size: "40x40") %></div>
+            <div class="card bg-light text-left user-message">
+              <div class="card-body">
+                <div class="card-text "><%== Rails::Html::WhiteListSanitizer.new.sanitize(conversation_part.conversation_part_body, tags: %w(img ul li), attributes: %w(src href )) %></div>
+              </div>
+            </div>
+          </div>
+          <div class="row user-timestamp">
+            <small><%= time_ago_in_words(conversation_part.creation_date) %> ago</small>
+          </div>
+        <% end %>
+
+      <% end %>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,67 @@
+<div class="index">
+  <%= form_tag conversations_search_path, method: :get, id: "conversation-lookup-form" do %>
+    <div class="form-group col-md-12">
+      <div class="input-group">
+        <div class="col-md-8  no-padding search-field">
+          <%= text_field_tag :keyword, params[:keyword],
+                             placeholder: "Conversation keywords", autofocus: true,
+                             class: "form-control search-box input-lg" %>
+        </div>
+
+        <div class="input-group-btn ">
+          <button class="btn btn-secondary dropdown-toggle dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="checked-tag">All</button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <ul class="tags_filters">
+              <li>
+                <%= radio_button_tag(:tag_filter, "All", checked = true, options = {:onclick => "change(this)"}) %> <%= label(:tag, :filter, "All") %>
+              </li>
+              <% obj[:tags].each do |tag| %>
+                <li>
+                  <%= radio_button_tag(:tag_filter, tag.name, checked = false, options = {:onclick => "change(this)"}) %> <%= label(:tag, :filter, tag.name) %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+
+        </div>
+        <div class="search-btn">
+          <%= button_tag(type: :submit, class: "btn btn-primary btn-search") do %>
+            <i class="fa fa-search"></i> Search
+          <% end %>
+        </div>
+
+      </div>
+
+    </div>
+  <% end %>
+
+  <% obj[:conversations].each do |conversation| %>
+    <div class="col-sm-12">
+      <div class="card text-center" style="background-color: #DADADA; border-color: #333333;">
+        <div class="card-block">
+          <% if obj[:highlights].empty? || obj[:highlights].present? && obj[:highlights][conversation].empty? %>
+            <p class="card-text text-left card-margin"><%== Rails::Html::FullSanitizer.new.sanitize(conversation.conversation_parts.first.conversation_part_body) %></p>
+          <% else %>
+            <p class="card-text text-left card-margin"><%== Rails::Html::WhiteListSanitizer.new.sanitize(obj[:highlights][conversation].last, tags: %w(mark)) %></p>
+          <% end %>
+          <div class="conversation-creation-date text-left">
+            <small>Created
+              by: <%= conversation.conversation_parts.first.author.name if conversation.conversation_parts.first.author.present? %>
+              , <%= time_ago_in_words(conversation.conversation_parts.first.creation_date) %> ago
+            </small>
+          </div>
+          <% unless conversation.tags.empty? %>
+            <div class="conversation-meta-data text-left">
+              <% conversation.tags.each do |tag| %>
+                <span class="badge badge-info text-left"> <%= tag.name %> </span>
+              <% end %>
+            </div>
+          <% end %>
+          <%= link_to "Show more", conversation_path(conversation), class: "btn btn-primary button-sm" %>
+          <%= link_to "Show Original", "https://intercomrades.intercom.com/a/apps/wb586zdy/inbox/inbox/all/conversations/" + conversation.conversation_id.to_s, class: "btn btn-secondary button-sm" %>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+</div>

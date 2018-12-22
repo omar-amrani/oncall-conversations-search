@@ -1,0 +1,5 @@
+<h1 align="center">Conversation Search</h1>
+<%= render 'conversations', obj: {:conversations => @conversations, :highlights => @conversation_highlights, :tags => @tags} %>
+<div class="container pagination justify-content-center">
+  <%= will_paginate @conversations, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+</div>

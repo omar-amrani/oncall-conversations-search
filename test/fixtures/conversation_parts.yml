@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  conversation_part_id: 
+  conversation_part_body: MyText
+  conversation: one
+
+two:
+  conversation_part_id: 
+  conversation_part_body: MyText
+  conversation: two
