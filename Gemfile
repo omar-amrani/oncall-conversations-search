@@ -58,7 +58,7 @@ gem 'mini_racer'
 #Aws signed request gem
 gem 'faraday_middleware-aws-sigv4'
 #Postgres gem
-gem 'pg'
+gem 'mysql2'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
