@@ -75,6 +75,7 @@ end
 
 group :production do
   gem "pg"
+  gem 'faraday_middleware-aws-sigv4'
 end
 #rspec gem
 gem 'rspec-rails'
