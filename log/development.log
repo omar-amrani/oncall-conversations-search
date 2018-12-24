@@ -442,3 +442,496 @@ Completed 200 OK in 10911ms (Views: 10903.7ms | ActiveRecord: 0.0ms)
 
 Started GET "/auth/intercom" for 127.0.0.1 at 2018-12-21 16:55:22 +0100
 Started GET "/auth/intercom" for 127.0.0.1 at 2018-12-21 16:55:23 +0100
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_conversation_parts_on_conversation_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_conversation_parts_on_conversation_id' AND type='index'
+[0m
+Started HEAD "/conversations/webhook" for 34.231.68.152 at 2018-12-24 12:26:13 +0100
+Cannot render console from 34.231.68.152! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ConversationsController#show as */*
+  Parameters: {"id"=>"webhook"}
+Redirected to https://003b7653.ngrok.io/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started HEAD "/conversations/webhook" for 34.231.68.152 at 2018-12-24 12:26:14 +0100
+Cannot render console from 34.231.68.152! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#show as */*
+  Parameters: {"id"=>"webhook"}
+Redirected to https://003b7653.ngrok.io/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started HEAD "/login" for 34.231.68.152 at 2018-12-24 12:26:14 +0100
+Cannot render console from 34.231.68.152! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as */*
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (8916.4ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_flash_messages.html.erb (0.7ms)
+Completed 200 OK in 9423ms (Views: 9390.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 185.57.4.100 at 2018-12-24 12:27:07 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#index as HTML
+Redirected to https://003b7653.ngrok.io/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 185.57.4.100 at 2018-12-24 12:27:08 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_navigation.html.erb (1.3ms)
+  Rendered layouts/_flash_messages.html.erb (0.8ms)
+Completed 200 OK in 185ms (Views: 182.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/intercom" for 185.57.4.100 at 2018-12-24 12:27:12 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/auth/intercom" for 185.57.4.100 at 2018-12-24 12:27:13 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/auth/intercom/callback?code=6af77b756e4948b78455b7fa8c956573&state=7af6a223f60def0695f502066541b30ca8e55792858a13d0" for 185.57.4.100 at 2018-12-24 12:27:23 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"6af77b756e4948b78455b7fa8c956573", "state"=>"7af6a223f60def0695f502066541b30ca8e55792858a13d0"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "omar.amrani@intercom.io"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 2.7ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:11:in `create'
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_conversation_parts_on_conversation_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_conversation_parts_on_conversation_id' AND type='index'
+[0m
+Started GET "/auth/intercom/callback?code=6af77b756e4948b78455b7fa8c956573&state=7af6a223f60def0695f502066541b30ca8e55792858a13d0" for 185.57.4.100 at 2018-12-24 12:28:20 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+OAuth2::Error (: 
+{"type":"error.list","request_id":"002j0qd4j0uumdpuk05g","errors":[{"code":"unauthorized_code","message":"Unauthorized Code"}]}):
+  
+oauth2 (1.4.1) lib/oauth2/client.rb:119:in `request'
+oauth2 (1.4.1) lib/oauth2/client.rb:146:in `get_token'
+oauth2 (1.4.1) lib/oauth2/strategy/auth_code.rb:30:in `get_token'
+omniauth-oauth2 (1.6.0) lib/omniauth/strategies/oauth2.rb:89:in `build_access_token'
+omniauth-oauth2 (1.6.0) lib/omniauth/strategies/oauth2.rb:73:in `callback_phase'
+omniauth (1.9.0) lib/omniauth/strategy.rb:238:in `callback_call'
+omniauth (1.9.0) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.9.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.0) lib/omniauth/builder.rb:64:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6.1) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.1) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 185.57.4.100 at 2018-12-24 12:28:35 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#index as HTML
+Redirected to https://003b7653.ngrok.io/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 185.57.4.100 at 2018-12-24 12:28:35 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (244.6ms)
+  Rendered layouts/_navigation.html.erb (1.2ms)
+  Rendered layouts/_flash_messages.html.erb (1.0ms)
+Completed 200 OK in 660ms (Views: 656.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/intercom" for 185.57.4.100 at 2018-12-24 12:28:38 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/auth/intercom" for 185.57.4.100 at 2018-12-24 12:28:39 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/auth/intercom/callback?code=f54eccb283db4f92984a8ab44f41b74e&state=edfeb4a48c6cc019cbeba5f5e7d7caa4fc4bd572bf7ff38d" for 185.57.4.100 at 2018-12-24 12:28:44 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"f54eccb283db4f92984a8ab44f41b74e", "state"=>"edfeb4a48c6cc019cbeba5f5e7d7caa4fc4bd572bf7ff38d"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "omar.amrani@intercom.io"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:11:in `create'
+Started GET "/" for 185.57.4.100 at 2018-12-24 12:31:13 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ConversationsController#index as HTML
+  Rendering conversations/index.html.erb within layouts/application
+  [1m[36mTag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[36mConversation Load (1.3ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered conversations/_conversations.html.erb (17.4ms)
+  Rendered conversations/index.html.erb within layouts/application (23.3ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_flash_messages.html.erb (0.5ms)
+Completed 200 OK in 529ms (Views: 493.7ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/conversations/webhook" for 34.197.76.213 at 2018-12-24 12:31:49 +0100
+Cannot render console from 34.197.76.213! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#get_conversation as JSON
+  Parameters: {"type"=>"notification_event", "app_id"=>"brz2bvp4", "data"=>{"type"=>"notification_event_data", "item"=>{"type"=>"conversation", "id"=>"20065276045", "created_at"=>1545049924, "updated_at"=>1545651107, "user"=>{"type"=>"lead", "id"=>"5c17971cebe40402c0c00676", "user_id"=>"902adf0e-aa83-42d8-afb5-3d1a365292be", "name"=>"Rose Leaf from Dublin", "email"=>"", "do_not_track"=>nil}, "assignee"=>{"type"=>"admin", "id"=>"1729783", "name"=>"Omar Amrani", "email"=>"omar.amrani@intercom.io"}, "conversation_message"=>{"type"=>"conversation_message", "id"=>"292728088", "url"=>nil, "subject"=>"", "body"=>"<p>Hi there</p>", "author"=>{"type"=>"user", "id"=>"5c17971cebe40402c0c00676"}, "attachments"=>[]}, "conversation_parts"=>{"type"=>"conversation_part.list", "conversation_parts"=>[{"type"=>"conversation_part", "id"=>"2453873445", "part_type"=>"close", "body"=>"<p>Closing a convo</p>", "created_at"=>1545651107, "updated_at"=>1545651107, "notified_at"=>1545651107, "assigned_to"=>{"type"=>"admin", "id"=>"1729783", "name"=>"Omar Amrani"}, "author"=>{"type"=>"admin", "id"=>"1729783", "name"=>"Omar Amrani"}, "attachments"=>[], "external_id"=>nil}], "total_count"=>1}, "open"=>false, "state"=>"closed", "snoozed_until"=>nil, "read"=>false, "metadata"=>{}, "tags"=>{"type"=>"tag.list", "tags"=>[]}, "tags_added"=>{"type"=>"tag.list", "tags"=>[]}, "links"=>{"conversation_web"=>"https://app.intercom.io/a/apps/brz2bvp4/conversations/20065276045"}}}, "links"=>{}, "id"=>"notif_abe5e13f-371b-4070-9d81-7fce1e450d68", "topic"=>"conversation.admin.closed", "delivery_status"=>"pending", "delivery_attempts"=>1, "delivered_at"=>0, "first_sent_at"=>1545651109, "created_at"=>1545651109, "self"=>nil, "conversation"=>{"id"=>"notif_abe5e13f-371b-4070-9d81-7fce1e450d68", "created_at"=>1545651109}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversation Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "conversations" WHERE LOWER("conversations"."conversation_id") = LOWER(?) LIMIT ?[0m  [["conversation_id", 20065276045], ["LIMIT", 1]]
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "conversations" ("conversation_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["conversation_id", 20065276045], ["created_at", "2018-12-24 11:31:49.882359"], ["updated_at", "2018-12-24 11:31:49.882359"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "5c17971cebe40402c0c00676"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAuthor Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "authors" WHERE LOWER("authors"."author_id") = LOWER(?) LIMIT ?[0m  [["author_id", "5c17971cebe40402c0c00676"], ["LIMIT", 1]]
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "authors" ("author_type", "author_id", "image_url") VALUES (?, ?, ?)[0m  [["author_type", "contact"], ["author_id", "5c17971cebe40402c0c00676"], ["image_url", "https://static.intercomassets.com/app/pseudonym_avatars_2018/rose-leaf.png"]]
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 292728088], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 292728088], ["conversation_part_body", "<p>Hi there</p>"], ["conversation_id", 1], ["created_at", "2018-12-24 11:31:51.310660"], ["updated_at", "2018-12-24 11:31:51.310660"], ["creation_date", "2018-12-17 12:32:04"], ["sanitized_conversation_part_body", "Hi there"], ["author_id", "1"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (22.3ms)[0m  {"id":1,"exception":["Faraday::ConnectionFailed","Failed to open TCP connection to localhost:9200 (Connection refused - connect(2) for \"localhost\" port 9200)"],"exception_object":"Failed to open TCP connection to localhost:9200 (Connection refused - connect(2) for \"localhost\" port 9200)"}
+Completed 200 OK in 1477ms (Views: 0.2ms | Searchkick: 22.3ms | ActiveRecord: 19.7ms)
+
+
+Started GET "/" for 185.57.4.100 at 2018-12-24 12:32:56 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#index as HTML
+  Rendering conversations/index.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  Rendered conversations/_conversations.html.erb (111.8ms)
+  Rendered conversations/index.html.erb within layouts/application (116.4ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_flash_messages.html.erb (0.5ms)
+Completed 200 OK in 228ms (Views: 223.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/conversations/1" for 185.57.4.100 at 2018-12-24 12:32:58 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering conversations/show.html.erb within layouts/application
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ?[0m  [["conversation_id", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered conversations/show.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_flash_messages.html.erb (0.5ms)
+Completed 200 OK in 125ms (Views: 117.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 185.57.4.100 at 2018-12-24 12:39:27 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ConversationsController#index as HTML
+  Rendering conversations/index.html.erb within layouts/application
+  [1m[36mTag Load (2.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[36mConversation Load (1.6ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mConversationPart Load (1.3ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mAuthor Load (1.5ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (1.6ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mTag Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  Rendered conversations/_conversations.html.erb (247.7ms)
+  Rendered conversations/index.html.erb within layouts/application (257.4ms)
+  Rendered layouts/_navigation.html.erb (1.3ms)
+  Rendered layouts/_flash_messages.html.erb (0.8ms)
+Completed 200 OK in 1288ms (Views: 1220.8ms | ActiveRecord: 16.8ms)
+
+
+Started POST "/conversations/webhook" for 34.231.68.152 at 2018-12-24 12:39:48 +0100
+Cannot render console from 34.231.68.152! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#get_conversation as JSON
+  Parameters: {"type"=>"notification_event", "app_id"=>"brz2bvp4", "data"=>{"type"=>"notification_event_data", "item"=>{"type"=>"conversation", "id"=>"19887573624", "created_at"=>1544010673, "updated_at"=>1545651586, "user"=>{"type"=>"user", "id"=>"5a65f2a87433e1e58e901823", "user_id"=>"123", "name"=>"Intercom Test", "email"=>"omar.amrani2@mail.dcu.ie", "do_not_track"=>nil}, "assignee"=>{"type"=>"admin", "id"=>"1769231", "name"=>"Omar DCU", "email"=>"ermy-amrani@hotmail.fr"}, "conversation_message"=>{"type"=>"conversation_message", "id"=>"288072402", "url"=>nil, "subject"=>"<p>testing PDF 2</p>", "body"=>"<p>This is another one</p> <br> <pre><i><p><i></i></p><p><strong>Séanadh Ríomhphoist/</strong></p><p><strong>Email Disclaimer</strong></p><pre><i><pre><i></i><p>Tá an ríomhphost seo agus aon chomhad a sheoltar leis faoi rún agus is lena úsáid ag an seolaí agus sin amháin é. <a href=\"https://www4.dcu.ie/iss/seanadh-riomhphoist.shtml\" rel=\"nofollow\" target=\"_blank\">Is féidir tuilleadh a léamh anseo.</a><a href=\"https://www4.dcu.ie/iss/seanadh-riomhphoist.shtml\" rel=\"nofollow\" target=\"_blank\"> </a></p></pre><p><i></i></p><p><em>This e-mail and any files transmitted with it are confidential and are intended solely for use by the addressee. <a href=\"https://www4.dcu.ie/iss/email-disclaimer.shtml\" rel=\"nofollow\" target=\"_blank\">Read more here.</a> </em></p></i></pre></i></pre>", "author"=>{"type"=>"user", "id"=>"5a65f2a87433e1e58e901823"}, "attachments"=>[{"type"=>"upload", "name"=>"goal1b.pdf", "url"=>"https://downloads.intercomcdn.com/i/o/89212653/1174f088269c773a359236ba/goal1b.pdf", "content_type"=>"application/pdf", "filesize"=>278126, "width"=>nil, "height"=>nil}]}, "conversation_parts"=>{"type"=>"conversation_part.list", "conversation_parts"=>[{"type"=>"conversation_part", "id"=>"2453892086", "part_type"=>"close", "body"=>"<p>Closing a convo</p>", "created_at"=>1545651586, "updated_at"=>1545651586, "notified_at"=>1545651586, "assigned_to"=>nil, "author"=>{"type"=>"admin", "id"=>"1729783", "name"=>"Omar Amrani"}, "attachments"=>[], "external_id"=>nil}], "total_count"=>1}, "open"=>false, "state"=>"closed", "snoozed_until"=>nil, "read"=>false, "metadata"=>{}, "tags"=>{"type"=>"tag.list", "tags"=>[]}, "tags_added"=>{"type"=>"tag.list", "tags"=>[]}, "links"=>{"conversation_web"=>"https://app.intercom.io/a/apps/brz2bvp4/conversations/19887573624"}}}, "links"=>{}, "id"=>"notif_1712c77d-e587-4dad-ac07-590cb5539ae5", "topic"=>"conversation.admin.closed", "delivery_status"=>"pending", "delivery_attempts"=>1, "delivered_at"=>0, "first_sent_at"=>1545651588, "created_at"=>1545651587, "self"=>nil, "conversation"=>{"id"=>"notif_1712c77d-e587-4dad-ac07-590cb5539ae5", "created_at"=>1545651587}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversation Exists (3.3ms)[0m  [1m[34mSELECT  1 AS one FROM "conversations" WHERE LOWER("conversations"."conversation_id") = LOWER(?) LIMIT ?[0m  [["conversation_id", 19887573624], ["LIMIT", 1]]
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "conversations" ("conversation_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["conversation_id", 19887573624], ["created_at", "2018-12-24 11:39:48.511528"], ["updated_at", "2018-12-24 11:39:48.511528"]]
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAuthor Load (1.6ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "5a65f2a87433e1e58e901823"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAuthor Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "authors" WHERE LOWER("authors"."author_id") = LOWER(?) LIMIT ?[0m  [["author_id", "5a65f2a87433e1e58e901823"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "authors" ("author_type", "author_id", "name", "image_url") VALUES (?, ?, ?, ?)[0m  [["author_type", "user"], ["author_id", "5a65f2a87433e1e58e901823"], ["name", "Intercom Test"], ["image_url", "https://www.joyoushealth.com/medialib/img-95-home.jpg"]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 288072402], ["LIMIT", 1]]
+  [1m[35mSQL (5.9ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 288072402], ["conversation_part_body", "<p>This is another one</p> <br> <pre><i><p><i></i></p><p><strong>Séanadh Ríomhphoist/</strong></p><p><strong>Email Disclaimer</strong></p><pre><i><pre><i></i><p>Tá an ríomhphost seo agus aon chomhad a sheoltar leis faoi rún agus is lena úsáid ag an seolaí agus sin amháin é. <a href=\"https://www4.dcu.ie/iss/seanadh-riomhphoist.shtml\" rel=\"nofollow\" target=\"_blank\">Is féidir tuilleadh a léamh anseo.</a><a href=\"https://www4.dcu.ie/iss/seanadh-riomhphoist.shtml\" rel=\"nofollow\" target=\"_blank\"> </a></p></pre><p><i></i></p><p><em>This e-mail and any files transmitted with it are confidential and are intended solely for use by the addressee. <a href=\"https://www4.dcu.ie/iss/email-disclaimer.shtml\" rel=\"nofollow\" target=\"_blank\">Read more here.</a> </em></p></i></pre></i></pre>"], ["conversation_id", 2], ["created_at", "2018-12-24 11:39:49.990257"], ["updated_at", "2018-12-24 11:39:49.990257"], ["creation_date", "2018-12-05 11:51:13"], ["sanitized_conversation_part_body", "This is another one  Séanadh Ríomhphoist/Email DisclaimerTá an ríomhphost seo agus aon chomhad a sheoltar leis faoi rún agus is lena úsáid ag an seolaí agus sin amháin é. Is féidir tuilleadh a léamh anseo. This e-mail and any files transmitted with it are confidential and are intended solely for use by the addressee. Read more here. "], ["author_id", "2"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (1451.5ms)[0m  {"id":2}
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAuthor Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "authors" WHERE LOWER("authors"."author_id") = LOWER(?) LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "authors" ("author_type", "author_id", "name", "image_url") VALUES (?, ?, ?, ?)[0m  [["author_type", "admin"], ["author_id", "1729783"], ["name", "Omar Amrani"], ["image_url", "https://static.intercomassets.com/avatars/1729783/square_128/FB_IMG_1515433712219-1516361270.jpg?1516361270"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2383485841], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 2383485841], ["conversation_part_body", "<h2>קמפיין אושר - אצל רילקסיס אין ניסים!</h2>\n<p><b>סוג הלקוח:</b> חינם<br><br><b>פעולה לביצוע:</b> לעודד את הלקוח לאשר תכנים<br><br><b>תגובת הלקוח:</b> מעולה!<br><br><b>נשלח על ידי:</b> צוות ברודקאסט - תפעול<br><br><b>נתוני הלקוח:</b><br></p>\n<ul>\n<li>18 צפיות, 1 אישורים</li>\n<li>אין לוגו</li>\n<li>0 לקוחות פעילים (מתוך 0)</li>\n<li>4 תחומים: פדיקור ומניקור,טיפולי פנים,איפור,עיצוב גבות</li>\n</ul>\n<p><b>דגשים:</b><br></p>\n<ul>\n<li>יש לאפיין את הלקוח: גדול/קטן, תחומי עיסוק, האם שיווק בעבר</li>\n<li>בפעם הראשונה שמשוחחים עם לקוח יש לייצר איתו קשר אישי</li>\n<li>להדגיש ללקוח שמעכשיו כמות התוכן תדולל ולהלהיב אותו על השירות</li>\n<li>להדגיש שתיקוני תוכן רק ללקוחות בשירות תפעול</li>\n</ul>\n<p><b>קישור לקמפיין:</b> <a href=\"http://cust.at/j7FLm\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">http://cust.at/j7FLm</a></p>"], ["conversation_id", 2], ["created_at", "2018-12-24 11:39:52.039589"], ["updated_at", "2018-12-24 11:39:52.039589"], ["creation_date", "2018-12-05 14:32:54"], ["sanitized_conversation_part_body", "קמפיין אושר - אצל רילקסיס אין ניסים!\nסוג הלקוח: חינםפעולה לביצוע: לעודד את הלקוח לאשר תכניםתגובת הלקוח: מעולה!נשלח על ידי: צוות ברודקאסט - תפעולנתוני הלקוח:\n\n18 צפיות, 1 אישורים\nאין לוגו\n0 לקוחות פעילים (מתוך 0)\n4 תחומים: פדיקור ומניקור,טיפולי פנים,איפור,עיצוב גבות\n\nדגשים:\n\nיש לאפיין את הלקוח: גדול/קטן, תחומי עיסוק, האם שיווק בעבר\nבפעם הראשונה שמשוחחים עם לקוח יש לייצר איתו קשר אישי\nלהדגיש ללקוח שמעכשיו כמות התוכן תדולל ולהלהיב אותו על השירות\nלהדגיש שתיקוני תוכן רק ללקוחות בשירות תפעול\n\nקישור לקמפיין: http://cust.at/j7FLm"], ["author_id", "3"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (99.6ms)[0m  {"id":3}
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2383576254], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 2383576254], ["conversation_part_body", "<h2>hsgdsd</h2>"], ["conversation_id", 2], ["created_at", "2018-12-24 11:39:52.153312"], ["updated_at", "2018-12-24 11:39:52.153312"], ["creation_date", "2018-12-05 14:50:17"], ["sanitized_conversation_part_body", "hsgdsd"], ["author_id", "3"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (82.7ms)[0m  {"id":4}
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2383577018], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 2383577018], ["conversation_part_body", "<p><b>jgsfsfgeg</b></p>"], ["conversation_id", 2], ["created_at", "2018-12-24 11:39:52.318838"], ["updated_at", "2018-12-24 11:39:52.318838"], ["creation_date", "2018-12-05 14:50:26"], ["sanitized_conversation_part_body", "jgsfsfgeg"], ["author_id", "3"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (52.9ms)[0m  {"id":5}
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2383577953], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 2383577953], ["conversation_part_body", "<h1>sfdjhsfhsijfgeg</h1>"], ["conversation_id", 2], ["created_at", "2018-12-24 11:39:52.380773"], ["updated_at", "2018-12-24 11:39:52.380773"], ["creation_date", "2018-12-05 14:50:37"], ["sanitized_conversation_part_body", "sfdjhsfhsijfgeg"], ["author_id", "3"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (62.7ms)[0m  {"id":6}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2383579437], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 2383579437], ["conversation_part_body", "<p><b>דגשים:</b></p>"], ["conversation_id", 2], ["created_at", "2018-12-24 11:39:52.452963"], ["updated_at", "2018-12-24 11:39:52.452963"], ["creation_date", "2018-12-05 14:50:54"], ["sanitized_conversation_part_body", "דגשים:"], ["author_id", "3"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (65.3ms)[0m  {"id":7}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2383580538], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 2383580538], ["conversation_part_body", "<ul>\n<li>18 צפיות, 1 אישורים</li>\n<li>אין לוגו</li>\n<li>0 לקוחות פעילים (מתוך 0)</li>\n<li>4 תחומים: פדיקור ומניקור,טיפולי פנים,איפור,עיצוב גבות</li>\n</ul>\n<p><b>דגשים:</b><br></p>\n<ul>\n<li>יש לאפיין את הלקוח: גדול/קטן, תחומי עיסוק, האם שיווק בעבר</li>\n<li>בפעם הראשונה שמשוחחים עם לקוח יש לייצר איתו קשר אישי</li>\n<li>להדגיש ללקוח שמעכשיו כמות התוכן תדולל ולהלהיב אותו על השירות</li>\n<li>להדגיש שתיקוני תוכן רק ללקוחות בשירות תפעול</li>\n</ul>"], ["conversation_id", 2], ["created_at", "2018-12-24 11:39:52.529476"], ["updated_at", "2018-12-24 11:39:52.529476"], ["creation_date", "2018-12-05 14:51:07"], ["sanitized_conversation_part_body", "\n18 צפיות, 1 אישורים\nאין לוגו\n0 לקוחות פעילים (מתוך 0)\n4 תחומים: פדיקור ומניקור,טיפולי פנים,איפור,עיצוב גבות\n\nדגשים:\n\nיש לאפיין את הלקוח: גדול/קטן, תחומי עיסוק, האם שיווק בעבר\nבפעם הראשונה שמשוחחים עם לקוח יש לייצר איתו קשר אישי\nלהדגיש ללקוח שמעכשיו כמות התוכן תדולל ולהלהיב אותו על השירות\nלהדגיש שתיקוני תוכן רק ללקוחות בשירות תפעול\n"], ["author_id", "3"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (86.1ms)[0m  {"id":8}
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2383582411], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 2383582411], ["conversation_part_body", "<ul>\n<li>18 צפיות, 1 אישורים</li>\n<li>אין לוגו</li>\n<li>0 לקוחות פעילים (מתוך 0)</li>\n<li>4 תחומים: פדיקור ומניקור,טיפולי פנים,איפור,עיצוב גבות</li>\n</ul>\n<p><b>                                                דגשים:</b><br></p>\n<ul>\n<li>יש לאפיין את הלקוח: גדול/קטן, תחומי עיסוק, האם שיווק בעבר</li>\n<li>בפעם הראשונה שמשוחחים עם לקוח יש לייצר איתו קשר אישי</li>\n<li>להדגיש ללקוח שמעכשיו כמות התוכן תדולל ולהלהיב אותו על השירות</li>\n<li>להדגיש שתיקוני תוכן רק ללקוחות בשירות תפעול</li>\n</ul>"], ["conversation_id", 2], ["created_at", "2018-12-24 11:39:52.631076"], ["updated_at", "2018-12-24 11:39:52.631076"], ["creation_date", "2018-12-05 14:51:28"], ["sanitized_conversation_part_body", "\n18 צפיות, 1 אישורים\nאין לוגו\n0 לקוחות פעילים (מתוך 0)\n4 תחומים: פדיקור ומניקור,טיפולי פנים,איפור,עיצוב גבות\n\n                                                דגשים:\n\nיש לאפיין את הלקוח: גדול/קטן, תחומי עיסוק, האם שיווק בעבר\nבפעם הראשונה שמשוחחים עם לקוח יש לייצר איתו קשר אישי\nלהדגיש ללקוח שמעכשיו כמות התוכן תדולל ולהלהיב אותו על השירות\nלהדגיש שתיקוני תוכן רק ללקוחות בשירות תפעול\n"], ["author_id", "3"]]
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (405.8ms)[0m  {"id":9}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2387473382], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 2387473382], ["conversation_part_body", "<h2>קמפיין אושר - אצל רילקסיס אין ניסים!</h2>\n<h2>קמפיין אושר - אצל רילקסיס אין ניסים!</h2>\n<p><b>סוג הלקוח:</b> חינם<br><br><b>פעולה לביצוע:</b> לעודד את הלקוח לאשר תכנים<br><br><b>תגובת הלקוח:</b> מעולה!<br><br><b>נשלח על ידי:</b> צוות ברודקאסט - תפעול<br><br><b>נתוני הלקוח:</b><br></p>\n<ul>\n<li>18 צפיות, 1 אישורים</li>\n<li>אין לוגו</li>\n<li>0 לקוחות פעילים (מתוך 0)</li>\n<li>4 תחומים: פדיקור ומניקור,טיפולי פנים,איפור,עיצוב גבות</li>\n</ul>\n<p><b>דגשים:</b><br></p>\n<ul>\n<li>יש לאפיין את הלקוח: גדול/קטן, תחומי עיסוק, האם שיווק בעבר</li>\n<li>בפעם הראשונה שמשוחחים עם לקוח יש לייצר איתו קשר אישי</li>\n<li>להדגיש ללקוח שמעכשיו כמות התוכן תדולל ולהלהיב אותו על השירות</li>\n<li>להדגיש שתיקוני תוכן רק ללקוחות בשירות תפעול</li>\n</ul>\n<p><b>קישור לקמפיין:</b> <a href=\"http://cust.at/j7FLm\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">http://cust.at/j7FLm</a></p>"], ["conversation_id", 2], ["created_at", "2018-12-24 11:39:53.076440"], ["updated_at", "2018-12-24 11:39:53.076440"], ["creation_date", "2018-12-06 10:59:04"], ["sanitized_conversation_part_body", "קמפיין אושר - אצל רילקסיס אין ניסים!\nקמפיין אושר - אצל רילקסיס אין ניסים!\nסוג הלקוח: חינםפעולה לביצוע: לעודד את הלקוח לאשר תכניםתגובת הלקוח: מעולה!נשלח על ידי: צוות ברודקאסט - תפעולנתוני הלקוח:\n\n18 צפיות, 1 אישורים\nאין לוגו\n0 לקוחות פעילים (מתוך 0)\n4 תחומים: פדיקור ומניקור,טיפולי פנים,איפור,עיצוב גבות\n\nדגשים:\n\nיש לאפיין את הלקוח: גדול/קטן, תחומי עיסוק, האם שיווק בעבר\nבפעם הראשונה שמשוחחים עם לקוח יש לייצר איתו קשר אישי\nלהדגיש ללקוח שמעכשיו כמות התוכן תדולל ולהלהיב אותו על השירות\nלהדגיש שתיקוני תוכן רק ללקוחות בשירות תפעול\n\nקישור לקמפיין: http://cust.at/j7FLm"], ["author_id", "3"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (46.7ms)[0m  {"id":10}
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2387483831], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 2387483831], ["conversation_part_body", "<h2>קמפיין אושר - אצל רילקסיס אין ניסים!</h2>\n<p><b>קמפיין אושר - אצל רילקסיס אין ניסים!</b></p>\n<p><b>סוג הלקוח:</b> חינם<br><br><b>פעולה לביצוע:</b> לעודד את הלקוח לאשר תכנים<br><br><b>תגובת הלקוח:</b> מעולה!<br><br><b>נשלח על ידי:</b> צוות ברודקאסט - תפעול<br><br><b>נתוני הלקוח:</b><br></p>\n<ul>\n<li>18 צפיות, 1 אישורים</li>\n<li>אין לוגו</li>\n<li>0 לקוחות פעילים (מתוך 0)</li>\n<li>4 תחומים: פדיקור ומניקור,טיפולי פנים,איפור,עיצוב גבות</li>\n</ul>\n<p><b> דגשים:</b><br></p>\n<ul>\n<li>יש לאפיין את הלקוח: גדול/קטן, תחומי עיסוק, האם שיווק בעבר</li>\n<li>בפעם הראשונה שמשוחחים עם לקוח יש לייצר איתו קשר אישי</li>\n<li>להדגיש ללקוח שמעכשיו כמות התוכן תדולל ולהלהיב אותו על השירות</li>\n<li>להדגיש שתיקוני תוכן רק ללקוחות בשירות תפעול</li>\n</ul>\n<p><b>קישור לקמפיין:</b> <a href=\"http://cust.at/j7FLm\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">http://cust.at/j7FLm</a></p>"], ["conversation_id", 2], ["created_at", "2018-12-24 11:39:53.144352"], ["updated_at", "2018-12-24 11:39:53.144352"], ["creation_date", "2018-12-06 11:00:36"], ["sanitized_conversation_part_body", "קמפיין אושר - אצל רילקסיס אין ניסים!\nקמפיין אושר - אצל רילקסיס אין ניסים!\nסוג הלקוח: חינםפעולה לביצוע: לעודד את הלקוח לאשר תכניםתגובת הלקוח: מעולה!נשלח על ידי: צוות ברודקאסט - תפעולנתוני הלקוח:\n\n18 צפיות, 1 אישורים\nאין לוגו\n0 לקוחות פעילים (מתוך 0)\n4 תחומים: פדיקור ומניקור,טיפולי פנים,איפור,עיצוב גבות\n\n דגשים:\n\nיש לאפיין את הלקוח: גדול/קטן, תחומי עיסוק, האם שיווק בעבר\nבפעם הראשונה שמשוחחים עם לקוח יש לייצר איתו קשר אישי\nלהדגיש ללקוח שמעכשיו כמות התוכן תדולל ולהלהיב אותו על השירות\nלהדגיש שתיקוני תוכן רק ללקוחות בשירות תפעול\n\nקישור לקמפיין: http://cust.at/j7FLm"], ["author_id", "3"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (61.5ms)[0m  {"id":11}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2387486684], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 2387486684], ["conversation_part_body", "<h2>קמפיין אושר - אצל רילקסיס אין ניסים!</h2>\n<p><b>קמפיין אושר - אצל רילקסיס אין ניסים!</b></p>\n<p><b>סוג הלקוח:</b> חינם<br><br><b>פעולה לביצוע:</b> לעודד את הלקוח לאשר תכנים<br><br><b>תגובת הלקוח:</b> מעולה!<br><br><b>נשלח על ידי:</b> צוות ברודקאסט - תפעול<br><br><b>נתוני הלקוח:</b><br></p>\n<ul>\n<li>18 צפיות, 1 אישורים</li>\n<li>אין לוגו</li>\n<li>0 לקוחות פעילים (מתוך 0)</li>\n<li>4 תחומים: פדיקור ומניקור,טיפולי פנים,איפור,עיצוב גבות</li>\n</ul>\n<p><b> דגשים:</b><br></p>\n<ul>\n<li>יש לאפיין את הלקוח: גדול/קטן, תחומי עיסוק, האם שיווק בעבר</li>\n<li>בפעם הראשונה שמשוחחים עם לקוח יש לייצר איתו קשר אישי</li>\n<li>להדגיש ללקוח שמעכשיו כמות התוכן תדולל ולהלהיב אותו על השירות</li>\n<li>להדגיש שתיקוני תוכן רק ללקוחות בשירות תפעול</li>\n</ul>\n<p><b>קישור לקמפיין:</b> <a href=\"http://cust.at/j7FLm\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">http://cust.at/j7FLm</a></p>"], ["conversation_id", 2], ["created_at", "2018-12-24 11:39:53.236401"], ["updated_at", "2018-12-24 11:39:53.236401"], ["creation_date", "2018-12-06 11:01:00"], ["sanitized_conversation_part_body", "קמפיין אושר - אצל רילקסיס אין ניסים!\nקמפיין אושר - אצל רילקסיס אין ניסים!\nסוג הלקוח: חינםפעולה לביצוע: לעודד את הלקוח לאשר תכניםתגובת הלקוח: מעולה!נשלח על ידי: צוות ברודקאסט - תפעולנתוני הלקוח:\n\n18 צפיות, 1 אישורים\nאין לוגו\n0 לקוחות פעילים (מתוך 0)\n4 תחומים: פדיקור ומניקור,טיפולי פנים,איפור,עיצוב גבות\n\n דגשים:\n\nיש לאפיין את הלקוח: גדול/קטן, תחומי עיסוק, האם שיווק בעבר\nבפעם הראשונה שמשוחחים עם לקוח יש לייצר איתו קשר אישי\nלהדגיש ללקוח שמעכשיו כמות התוכן תדולל ולהלהיב אותו על השירות\nלהדגיש שתיקוני תוכן רק ללקוחות בשירות תפעול\n\nקישור לקמפיין: http://cust.at/j7FLm"], ["author_id", "3"]]
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (35.7ms)[0m  {"id":12}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2453892086], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 2453892086], ["conversation_part_body", "<p>Closing a convo</p>"], ["conversation_id", 2], ["created_at", "2018-12-24 11:39:53.300365"], ["updated_at", "2018-12-24 11:39:53.300365"], ["creation_date", "2018-12-24 11:39:46"], ["sanitized_conversation_part_body", "Closing a convo"], ["author_id", "3"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (42.5ms)[0m  {"id":13}
+Completed 200 OK in 4890ms (Views: 0.2ms | Searchkick: 2493.0ms | ActiveRecord: 74.6ms)
+
+
+Started GET "/" for 185.57.4.100 at 2018-12-24 12:39:56 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#index as HTML
+  Rendering conversations/index.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mConversationPart Load (0.3ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.4ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  Rendered conversations/_conversations.html.erb (34.3ms)
+  Rendered conversations/index.html.erb within layouts/application (40.0ms)
+  Rendered layouts/_navigation.html.erb (1.6ms)
+  Rendered layouts/_flash_messages.html.erb (0.8ms)
+Completed 200 OK in 237ms (Views: 229.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/conversations/2" for 185.57.4.100 at 2018-12-24 12:39:58 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mConversation Load (0.4ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering conversations/show.html.erb within layouts/application
+  [1m[36mConversationPart Load (0.3ms)[0m  [1m[34mSELECT "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ?[0m  [["conversation_id", 2]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered conversations/show.html.erb within layouts/application (52.4ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_flash_messages.html.erb (0.7ms)
+Completed 200 OK in 165ms (Views: 153.3ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/conversations/webhook" for 34.197.76.213 at 2018-12-24 12:40:53 +0100
+Cannot render console from 34.197.76.213! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#get_conversation as JSON
+  Parameters: {"type"=>"notification_event", "app_id"=>"brz2bvp4", "data"=>{"type"=>"notification_event_data", "item"=>{"type"=>"conversation", "id"=>"19887573624", "created_at"=>1544010673, "updated_at"=>1545651586, "user"=>{"type"=>"user", "id"=>"5a65f2a87433e1e58e901823", "user_id"=>"123", "name"=>"Intercom Test", "email"=>"omar.amrani2@mail.dcu.ie", "do_not_track"=>nil}, "assignee"=>{"type"=>"admin", "id"=>"1769231", "name"=>"Omar DCU", "email"=>"ermy-amrani@hotmail.fr"}, "conversation_message"=>{"type"=>"conversation_message", "id"=>"288072402", "url"=>nil, "subject"=>"<p>testing PDF 2</p>", "body"=>"<p>This is another one</p> <br> <pre><i><p><i></i></p><p><strong>Séanadh Ríomhphoist/</strong></p><p><strong>Email Disclaimer</strong></p><pre><i><pre><i></i><p>Tá an ríomhphost seo agus aon chomhad a sheoltar leis faoi rún agus is lena úsáid ag an seolaí agus sin amháin é. <a href=\"https://www4.dcu.ie/iss/seanadh-riomhphoist.shtml\" rel=\"nofollow\" target=\"_blank\">Is féidir tuilleadh a léamh anseo.</a><a href=\"https://www4.dcu.ie/iss/seanadh-riomhphoist.shtml\" rel=\"nofollow\" target=\"_blank\"> </a></p></pre><p><i></i></p><p><em>This e-mail and any files transmitted with it are confidential and are intended solely for use by the addressee. <a href=\"https://www4.dcu.ie/iss/email-disclaimer.shtml\" rel=\"nofollow\" target=\"_blank\">Read more here.</a> </em></p></i></pre></i></pre>", "author"=>{"type"=>"user", "id"=>"5a65f2a87433e1e58e901823"}, "attachments"=>[{"type"=>"upload", "name"=>"goal1b.pdf", "url"=>"https://downloads.intercomcdn.com/i/o/89212653/1174f088269c773a359236ba/goal1b.pdf", "content_type"=>"application/pdf", "filesize"=>278126, "width"=>nil, "height"=>nil}]}, "conversation_parts"=>{"type"=>"conversation_part.list", "conversation_parts"=>[{"type"=>"conversation_part", "id"=>"2453892086", "part_type"=>"close", "body"=>"<p>Closing a convo</p>", "created_at"=>1545651586, "updated_at"=>1545651586, "notified_at"=>1545651586, "assigned_to"=>nil, "author"=>{"type"=>"admin", "id"=>"1729783", "name"=>"Omar Amrani"}, "attachments"=>[], "external_id"=>nil}], "total_count"=>1}, "open"=>false, "state"=>"closed", "snoozed_until"=>nil, "read"=>false, "metadata"=>{}, "tags"=>{"type"=>"tag.list", "tags"=>[]}, "tags_added"=>{"type"=>"tag.list", "tags"=>[]}, "links"=>{"conversation_web"=>"https://app.intercom.io/a/apps/brz2bvp4/conversations/19887573624"}}}, "links"=>{}, "id"=>"notif_1712c77d-e587-4dad-ac07-590cb5539ae5", "topic"=>"conversation.admin.closed", "delivery_status"=>"retry", "delivery_attempts"=>2, "delivered_at"=>0, "first_sent_at"=>1545651593, "created_at"=>1545651587, "self"=>nil, "conversation"=>{"id"=>"notif_1712c77d-e587-4dad-ac07-590cb5539ae5", "created_at"=>1545651587}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversation Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "conversations" WHERE LOWER("conversations"."conversation_id") = LOWER(?) LIMIT ?[0m  [["conversation_id", 19887573624], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "5a65f2a87433e1e58e901823"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "5a65f2a87433e1e58e901823"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 288072402], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2383485841], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2383576254], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2383577018], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2383577953], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2383579437], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mAuthor Load (0.6ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2383580538], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2383582411], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2387473382], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2387483831], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2387486684], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2453892086], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 1004ms (Views: 0.1ms | ActiveRecord: 9.0ms)
+
+
