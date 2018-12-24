@@ -935,3 +935,806 @@ Can't verify CSRF token authenticity.
 Completed 200 OK in 1004ms (Views: 0.1ms | ActiveRecord: 9.0ms)
 
 
+Started POST "/conversations/webhook" for 34.197.76.213 at 2018-12-24 13:24:05 +0100
+Cannot render console from 34.197.76.213! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#get_conversation as JSON
+  Parameters: {"type"=>"notification_event", "app_id"=>"brz2bvp4", "data"=>{"type"=>"notification_event_data", "item"=>{"type"=>"conversation", "id"=>"19904823038", "created_at"=>1544092484, "updated_at"=>1545654243, "user"=>{"type"=>"user", "id"=>"5a65f2a87433e1e58e901823", "user_id"=>"123", "name"=>"Intercom Test", "email"=>"omar.amrani2@mail.dcu.ie", "do_not_track"=>nil}, "assignee"=>{"type"=>"admin", "id"=>"1769231", "name"=>"Omar DCU", "email"=>"ermy-amrani@hotmail.fr"}, "conversation_message"=>{"type"=>"conversation_message", "id"=>"288517082", "url"=>"https://alpha-omar-blog.herokuapp.com/kb", "subject"=>"", "body"=>"<p>This is a testtr </p>", "author"=>{"type"=>"user", "id"=>"5a65f2a87433e1e58e901823"}, "attachments"=>[]}, "conversation_parts"=>{"type"=>"conversation_part.list", "conversation_parts"=>[{"type"=>"conversation_part", "id"=>"2453996763", "part_type"=>"close", "body"=>"<p>Closing a convo</p>", "created_at"=>1545654243, "updated_at"=>1545654243, "notified_at"=>1545654243, "assigned_to"=>nil, "author"=>{"type"=>"admin", "id"=>"1729783", "name"=>"Omar Amrani"}, "attachments"=>[], "external_id"=>nil}], "total_count"=>1}, "open"=>false, "state"=>"closed", "snoozed_until"=>nil, "read"=>false, "metadata"=>{}, "tags"=>{"type"=>"tag.list", "tags"=>[]}, "tags_added"=>{"type"=>"tag.list", "tags"=>[]}, "links"=>{"conversation_web"=>"https://app.intercom.io/a/apps/brz2bvp4/conversations/19904823038"}}}, "links"=>{}, "id"=>"notif_369e3c90-0413-4538-bfc1-ae80a7ccb78b", "topic"=>"conversation.admin.closed", "delivery_status"=>"pending", "delivery_attempts"=>1, "delivered_at"=>0, "first_sent_at"=>1545654245, "created_at"=>1545654244, "self"=>nil, "conversation"=>{"id"=>"notif_369e3c90-0413-4538-bfc1-ae80a7ccb78b", "created_at"=>1545654244}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversation Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "conversations" WHERE LOWER("conversations"."conversation_id") = LOWER(?) LIMIT ?[0m  [["conversation_id", 19904823038], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "conversations" ("conversation_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["conversation_id", 19904823038], ["created_at", "2018-12-24 12:24:05.476183"], ["updated_at", "2018-12-24 12:24:05.476183"]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "5a65f2a87433e1e58e901823"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "5a65f2a87433e1e58e901823"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 288517082], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 288517082], ["conversation_part_body", "<p>This is a testtr </p>"], ["conversation_id", 3], ["created_at", "2018-12-24 12:24:06.120330"], ["updated_at", "2018-12-24 12:24:06.120330"], ["creation_date", "2018-12-06 10:34:44"], ["sanitized_conversation_part_body", "This is a testtr "], ["author_id", "2"]]
+  [1m[35m (790.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (54.7ms)[0m  {"id":14}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2453996763], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 2453996763], ["conversation_part_body", "<p>Closing a convo</p>"], ["conversation_id", 3], ["created_at", "2018-12-24 12:24:06.984837"], ["updated_at", "2018-12-24 12:24:06.984837"], ["creation_date", "2018-12-24 12:24:03"], ["sanitized_conversation_part_body", "Closing a convo"], ["author_id", "3"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (29.8ms)[0m  {"id":15}
+Completed 200 OK in 1558ms (Views: 0.8ms | Searchkick: 84.4ms | ActiveRecord: 800.7ms)
+
+
+Started POST "/conversations/webhook" for 35.171.78.91 at 2018-12-24 14:32:49 +0100
+Cannot render console from 35.171.78.91! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#get_conversation as JSON
+  Parameters: {"type"=>"notification_event", "app_id"=>"brz2bvp4", "data"=>{"type"=>"notification_event_data", "item"=>{"type"=>"conversation", "id"=>"19740886175", "created_at"=>1543243808, "updated_at"=>1545658368, "user"=>{"type"=>"user", "id"=>"5a65f2a87433e1e58e901823", "user_id"=>"123", "name"=>"Intercom Test", "email"=>"omar.amrani2@mail.dcu.ie", "do_not_track"=>nil}, "assignee"=>{"type"=>"admin", "id"=>"1729783", "name"=>"Omar Amrani", "email"=>"omar.amrani@intercom.io"}, "conversation_message"=>{"type"=>"conversation_message", "id"=>"284216104", "url"=>"https://alpha-omar-blog.herokuapp.com/kb", "subject"=>"", "body"=>"<p>HI there</p>", "author"=>{"type"=>"user", "id"=>"5a65f2a87433e1e58e901823"}, "attachments"=>[]}, "conversation_parts"=>{"type"=>"conversation_part.list", "conversation_parts"=>[{"type"=>"conversation_part", "id"=>"2454162326", "part_type"=>"close", "body"=>"<p>Testing closing a conversation</p>", "created_at"=>1545658368, "updated_at"=>1545658368, "notified_at"=>1545658368, "assigned_to"=>nil, "author"=>{"type"=>"admin", "id"=>"1729783", "name"=>"Omar Amrani"}, "attachments"=>[], "external_id"=>nil}], "total_count"=>1}, "open"=>false, "state"=>"closed", "snoozed_until"=>nil, "read"=>false, "metadata"=>{}, "tags"=>{"type"=>"tag.list", "tags"=>[]}, "tags_added"=>{"type"=>"tag.list", "tags"=>[]}, "links"=>{"conversation_web"=>"https://app.intercom.io/a/apps/brz2bvp4/conversations/19740886175"}}}, "links"=>{}, "id"=>"notif_070c66fc-578d-46ba-b2d9-1c46e8989906", "topic"=>"conversation.admin.closed", "delivery_status"=>"pending", "delivery_attempts"=>1, "delivered_at"=>0, "first_sent_at"=>1545658369, "created_at"=>1545658369, "self"=>nil, "conversation"=>{"id"=>"notif_070c66fc-578d-46ba-b2d9-1c46e8989906", "created_at"=>1545658369}}
+Can't verify CSRF token authenticity.
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversation Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "conversations" WHERE LOWER("conversations"."conversation_id") = LOWER(?) LIMIT ?[0m  [["conversation_id", 19740886175], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "conversations" ("conversation_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["conversation_id", 19740886175], ["created_at", "2018-12-24 13:32:49.945995"], ["updated_at", "2018-12-24 13:32:49.945995"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "5a65f2a87433e1e58e901823"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "5a65f2a87433e1e58e901823"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 284216104], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 284216104], ["conversation_part_body", "<p>HI there</p>"], ["conversation_id", 4], ["created_at", "2018-12-24 13:32:50.963528"], ["updated_at", "2018-12-24 13:32:50.963528"], ["creation_date", "2018-11-26 14:50:08"], ["sanitized_conversation_part_body", "HI there"], ["author_id", "2"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (48.5ms)[0m  {"id":16}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2344344664], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 2344344664], ["conversation_part_body", "<p>Hey</p>"], ["conversation_id", 4], ["created_at", "2018-12-24 13:32:51.021511"], ["updated_at", "2018-12-24 13:32:51.021511"], ["creation_date", "2018-11-26 14:52:11"], ["sanitized_conversation_part_body", "Hey"], ["author_id", "3"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (31.0ms)[0m  {"id":17}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "5a65f2a87433e1e58e901823"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "5a65f2a87433e1e58e901823"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2344345478], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 2344345478], ["conversation_part_body", "<p>Wazzap</p>"], ["conversation_id", 4], ["created_at", "2018-12-24 13:32:51.060898"], ["updated_at", "2018-12-24 13:32:51.060898"], ["creation_date", "2018-11-26 14:52:20"], ["sanitized_conversation_part_body", "Wazzap"], ["author_id", "2"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (24.6ms)[0m  {"id":18}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "5a65f2a87433e1e58e901823"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "5a65f2a87433e1e58e901823"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2344392096], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 2344392096], ["conversation_part_body", "<p>Another one</p>"], ["conversation_id", 4], ["created_at", "2018-12-24 13:32:51.094399"], ["updated_at", "2018-12-24 13:32:51.094399"], ["creation_date", "2018-11-26 15:00:25"], ["sanitized_conversation_part_body", "Another one"], ["author_id", "2"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (30.0ms)[0m  {"id":19}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2344397029], ["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 2344397029], ["conversation_part_body", "<p>This is a test</p>"], ["conversation_id", 4], ["created_at", "2018-12-24 13:32:51.135082"], ["updated_at", "2018-12-24 13:32:51.135082"], ["creation_date", "2018-11-26 15:00:59"], ["sanitized_conversation_part_body", "This is a test"], ["author_id", "3"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (27.6ms)[0m  {"id":20}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "5a65f2a87433e1e58e901823"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "5a65f2a87433e1e58e901823"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2344399410], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 2344399410], ["conversation_part_body", "<p>Got you</p>"], ["conversation_id", 4], ["created_at", "2018-12-24 13:32:51.173253"], ["updated_at", "2018-12-24 13:32:51.173253"], ["creation_date", "2018-11-26 15:01:25"], ["sanitized_conversation_part_body", "Got you"], ["author_id", "2"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (16.4ms)[0m  {"id":21}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2345266427], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 2345266427], ["conversation_part_body", "<p>😍</p>"], ["conversation_id", 4], ["created_at", "2018-12-24 13:32:51.216440"], ["updated_at", "2018-12-24 13:32:51.216440"], ["creation_date", "2018-11-26 17:17:11"], ["sanitized_conversation_part_body", "😍"], ["author_id", "3"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (24.9ms)[0m  {"id":22}
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "5a65f2a87433e1e58e901823"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "5a65f2a87433e1e58e901823"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2345337609], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 2345337609], ["conversation_part_body", "<p>Hi</p>"], ["conversation_id", 4], ["created_at", "2018-12-24 13:32:51.252679"], ["updated_at", "2018-12-24 13:32:51.252679"], ["creation_date", "2018-11-26 17:28:49"], ["sanitized_conversation_part_body", "Hi"], ["author_id", "2"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (42.9ms)[0m  {"id":23}
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "5a65f2a87433e1e58e901823"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "5a65f2a87433e1e58e901823"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2345339834], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 2345339834], ["conversation_part_body", "<p>Another one</p>"], ["conversation_id", 4], ["created_at", "2018-12-24 13:32:51.307546"], ["updated_at", "2018-12-24 13:32:51.307546"], ["creation_date", "2018-11-26 17:29:10"], ["sanitized_conversation_part_body", "Another one"], ["author_id", "2"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (26.3ms)[0m  {"id":24}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2454162326], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 2454162326], ["conversation_part_body", "<p>Testing closing a conversation</p>"], ["conversation_id", 4], ["created_at", "2018-12-24 13:32:51.344578"], ["updated_at", "2018-12-24 13:32:51.344578"], ["creation_date", "2018-12-24 13:32:48"], ["sanitized_conversation_part_body", "Testing closing a conversation"], ["author_id", "3"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (23.5ms)[0m  {"id":25}
+Completed 200 OK in 1459ms (Views: 1.3ms | Searchkick: 295.7ms | ActiveRecord: 36.9ms)
+
+
+Started POST "/conversations/webhook" for 34.197.76.213 at 2018-12-24 14:37:33 +0100
+Cannot render console from 34.197.76.213! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#get_conversation as JSON
+  Parameters: {"type"=>"notification_event", "app_id"=>"brz2bvp4", "data"=>{"type"=>"notification_event_data", "item"=>{"type"=>"conversation", "id"=>"15300460289", "created_at"=>1521629596, "updated_at"=>1545658651, "user"=>{"type"=>"user", "id"=>"5a65f2a87433e1e58e901823", "user_id"=>"123", "name"=>"Intercom Test", "email"=>"omar.amrani2@mail.dcu.ie", "do_not_track"=>nil}, "assignee"=>{"type"=>"admin", "id"=>"1729783", "name"=>"Omar Amrani", "email"=>"omar.amrani@intercom.io"}, "conversation_message"=>{"type"=>"conversation_message", "id"=>"189976279", "url"=>nil, "subject"=>"", "body"=>"<p>Hi</p>", "author"=>{"type"=>"user", "id"=>"5a65f2a87433e1e58e901823"}, "attachments"=>[]}, "conversation_parts"=>{"type"=>"conversation_part.list", "conversation_parts"=>[{"type"=>"conversation_part", "id"=>"2454174179", "part_type"=>"close", "body"=>"<div class=\"intercom-container\"><img src=\"https://gifs.intercomcdn.com/images/1a4ace4010b378332470338dff847caa/tenor.gif\"></div>", "created_at"=>1545658651, "updated_at"=>1545658651, "notified_at"=>1545658651, "assigned_to"=>nil, "author"=>{"type"=>"admin", "id"=>"1729783", "name"=>"Omar Amrani"}, "attachments"=>[], "external_id"=>nil}], "total_count"=>1}, "open"=>false, "state"=>"closed", "snoozed_until"=>nil, "read"=>false, "metadata"=>{}, "tags"=>{"type"=>"tag.list", "tags"=>[]}, "tags_added"=>{"type"=>"tag.list", "tags"=>[]}, "links"=>{"conversation_web"=>"https://app.intercom.io/a/apps/brz2bvp4/conversations/15300460289"}}}, "links"=>{}, "id"=>"notif_5dc3e5c1-4ee8-4a02-9076-7242dc6cf80b", "topic"=>"conversation.admin.closed", "delivery_status"=>"pending", "delivery_attempts"=>1, "delivered_at"=>0, "first_sent_at"=>1545658653, "created_at"=>1545658653, "self"=>nil, "conversation"=>{"id"=>"notif_5dc3e5c1-4ee8-4a02-9076-7242dc6cf80b", "created_at"=>1545658653}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversation Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "conversations" WHERE LOWER("conversations"."conversation_id") = LOWER(?) LIMIT ?[0m  [["conversation_id", 15300460289], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "conversations" ("conversation_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["conversation_id", 15300460289], ["created_at", "2018-12-24 13:37:33.812723"], ["updated_at", "2018-12-24 13:37:33.812723"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "5a65f2a87433e1e58e901823"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "5a65f2a87433e1e58e901823"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 189976279], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 189976279], ["conversation_part_body", "<p>Hi</p>"], ["conversation_id", 5], ["created_at", "2018-12-24 13:37:34.458987"], ["updated_at", "2018-12-24 13:37:34.458987"], ["creation_date", "2018-03-21 10:53:16"], ["sanitized_conversation_part_body", "Hi"], ["author_id", "2"]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (31.6ms)[0m  {"id":26}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 1245546326], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 1245546326], ["conversation_part_body", "<p>At the moment we do stand out by our up to date and massive data, pls see this page - <a href=\"https://ahrefs.com/big-data\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">https://ahrefs.com/big-data</a>. 😃</p>\n<p>with the help of our Site Explorer tool you may easily analyse your site's backlinks profile and the sites of your competitors; this tool will come in handy if you want to explore most profitable keywords for organic and paid search; <br>our Content Explorer will help you find the most shared content for any topic having the largest amount of shares on social media channels;<br>Ahrefs Keywords Explorer will help you get relevant keyword ideas and traffic estimations;<br>Rank Tracker tool allows to track desktop and mobile rankings for any location and get daily/weekly/monthly reports;<br>Site Audit tool will analyse your website for common SEO issues &amp; monitor your SEO health over time;<br>On top of these tools, we also have Alerts will keep you notified of new &amp; lost backlinks, web mentions and keywords rankings.<br></p>"], ["conversation_id", 5], ["created_at", "2018-12-24 13:37:34.502524"], ["updated_at", "2018-12-24 13:37:34.502524"], ["creation_date", "2018-03-21 10:57:07"], ["sanitized_conversation_part_body", "At the moment we do stand out by our up to date and massive data, pls see this page - https://ahrefs.com/big-data. 😃\nwith the help of our Site Explorer tool you may easily analyse your site's backlinks profile and the sites of your competitors; this tool will come in handy if you want to explore most profitable keywords for organic and paid search; our Content Explorer will help you find the most shared content for any topic having the largest amount of shares on social media channels;Ahrefs Keywords Explorer will help you get relevant keyword ideas and traffic estimations;Rank Tracker tool allows to track desktop and mobile rankings for any location and get daily/weekly/monthly reports;Site Audit tool will analyse your website for common SEO issues &amp; monitor your SEO health over time;On top of these tools, we also have Alerts will keep you notified of new &amp; lost backlinks, web mentions and keywords rankings."], ["author_id", "3"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (29.9ms)[0m  {"id":27}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2454173960], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 2454173960], ["conversation_part_body", "<p>Closing a conversation</p>"], ["conversation_id", 5], ["created_at", "2018-12-24 13:37:34.541185"], ["updated_at", "2018-12-24 13:37:34.541185"], ["creation_date", "2018-12-24 13:37:26"], ["sanitized_conversation_part_body", "Closing a conversation"], ["author_id", "3"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (34.4ms)[0m  {"id":28}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."author_id" = ? LIMIT ?[0m  [["author_id", "1729783"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversationPart Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE LOWER("conversation_parts"."conversation_part_id") = LOWER(?) LIMIT ?[0m  [["conversation_part_id", 2454174179], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "conversation_parts" ("conversation_part_id", "conversation_part_body", "conversation_id", "created_at", "updated_at", "creation_date", "sanitized_conversation_part_body", "author_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["conversation_part_id", 2454174179], ["conversation_part_body", "<div class=\"intercom-container\"><img src=\"https://gifs.intercomcdn.com/images/1a4ace4010b378332470338dff847caa/tenor.gif\"></div>"], ["conversation_id", 5], ["created_at", "2018-12-24 13:37:34.584221"], ["updated_at", "2018-12-24 13:37:34.584221"], ["creation_date", "2018-12-24 13:37:31"], ["sanitized_conversation_part_body", ""], ["author_id", "3"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mConversationPart Store (19.8ms)[0m  {"id":29}
+Completed 200 OK in 801ms (Views: 0.2ms | Searchkick: 115.6ms | ActiveRecord: 18.7ms)
+
+
+Started GET "/" for 185.57.4.100 at 2018-12-24 14:41:51 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ConversationsController#index as HTML
+  Rendering conversations/index.html.erb within layouts/application
+  [1m[36mTag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[36mConversation Load (1.7ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mConversationPart Load (1.4ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mAuthor Load (1.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mTag Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.3ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (1.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.3ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  Rendered conversations/_conversations.html.erb (247.8ms)
+  Rendered conversations/index.html.erb within layouts/application (256.6ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_flash_messages.html.erb (0.5ms)
+Completed 200 OK in 1204ms (Views: 1148.0ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/conversations/search?utf8=%E2%9C%93&keyword=there&tag_filter=All&button=" for 185.57.4.100 at 2018-12-24 14:42:02 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#search as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"there", "tag_filter"=>"All", "button"=>""}
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (expected both :access_key_id and :secret_access_key options):
+  
+app/controllers/conversations_controller.rb:162:in `conversation_part_search'
+app/controllers/conversations_controller.rb:19:in `search'
+Started GET "/" for 185.57.4.100 at 2018-12-24 14:42:27 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#index as HTML
+  Rendering conversations/index.html.erb within layouts/application
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[36mConversation Load (0.1ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.3ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.6ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  Rendered conversations/_conversations.html.erb (117.5ms)
+  Rendered conversations/index.html.erb within layouts/application (120.5ms)
+  Rendered layouts/_navigation.html.erb (1.3ms)
+  Rendered layouts/_flash_messages.html.erb (0.7ms)
+Completed 200 OK in 271ms (Views: 260.9ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/" for 185.57.4.100 at 2018-12-24 14:42:51 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ConversationsController#index as HTML
+  Rendering conversations/index.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[36mConversation Load (0.5ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (1.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.3ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  Rendered conversations/_conversations.html.erb (171.4ms)
+  Rendered conversations/index.html.erb within layouts/application (179.1ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered layouts/_flash_messages.html.erb (2.3ms)
+Completed 200 OK in 951ms (Views: 907.3ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/conversations/search?utf8=%E2%9C%93&keyword=hi&tag_filter=All&button=" for 185.57.4.100 at 2018-12-24 14:42:56 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#search as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"hi", "tag_filter"=>"All", "button"=>""}
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (expected both :access_key_id and :secret_access_key options):
+  
+app/controllers/conversations_controller.rb:162:in `conversation_part_search'
+app/controllers/conversations_controller.rb:19:in `search'
+Started GET "/" for 185.57.4.100 at 2018-12-24 14:47:27 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ConversationsController#index as HTML
+  Rendering conversations/index.html.erb within layouts/application
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.4ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.7ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.4ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.3ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  Rendered conversations/_conversations.html.erb (212.4ms)
+  Rendered conversations/index.html.erb within layouts/application (218.2ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_flash_messages.html.erb (0.8ms)
+Completed 200 OK in 934ms (Views: 893.3ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/conversations/search?utf8=%E2%9C%93&keyword=hi&tag_filter=All&button=" for 185.57.4.100 at 2018-12-24 14:47:32 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#search as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"hi", "tag_filter"=>"All", "button"=>""}
+  [1m[33mConversationPart Search (145.7ms)[0m  curl http://localhost:9200/conversation_parts_development/_search?pretty -H 'Content-Type: application/json' -d '{"query":{"dis_max":{"queries":[{"match":{"sanitized_conversation_part_body.analyzed":{"query":"hi","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"sanitized_conversation_part_body.analyzed":{"query":"hi","boost":10,"operator":"and","analyzer":"searchkick_search2"}}}]}},"highlight":{"fields":{"sanitized_conversation_part_body.analyzed":{}},"fragment_size":0,"pre_tags":["\u003cmark\u003e"],"post_tags":["\u003c/mark\u003e"]},"timeout":"11s","_source":false,"size":10000,"from":0}'
+Completed 500 Internal Server Error in 180ms (Searchkick: 145.7ms | ActiveRecord: 0.0ms)
+
+
+  
+Searchkick::InvalidQueryError (Bad mapping - run ConversationPart.reindex):
+  
+app/controllers/conversations_controller.rb:162:in `conversation_part_search'
+app/controllers/conversations_controller.rb:19:in `search'
+  [1m[36mConversationPart Load (2.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[33mConversationPart Import (219.1ms)[0m  {"count":29}
+Started GET "/" for 185.57.4.100 at 2018-12-24 14:49:07 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ConversationsController#index as HTML
+  Rendering conversations/index.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.3ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.7ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  Rendered conversations/_conversations.html.erb (176.7ms)
+  Rendered conversations/index.html.erb within layouts/application (181.5ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_flash_messages.html.erb (0.8ms)
+Completed 200 OK in 967ms (Views: 933.4ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/conversations/search?utf8=%E2%9C%93&keyword=hi&tag_filter=All&button=" for 185.57.4.100 at 2018-12-24 14:49:12 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#search as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"hi", "tag_filter"=>"All", "button"=>""}
+  [1m[33mConversationPart Search (190.0ms)[0m  curl http://localhost:9200/conversation_parts_development/_search?pretty -H 'Content-Type: application/json' -d '{"query":{"dis_max":{"queries":[{"match":{"sanitized_conversation_part_body.analyzed":{"query":"hi","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"sanitized_conversation_part_body.analyzed":{"query":"hi","boost":10,"operator":"and","analyzer":"searchkick_search2"}}}]}},"highlight":{"fields":{"sanitized_conversation_part_body.analyzed":{}},"fragment_size":0,"pre_tags":["\u003cmark\u003e"],"post_tags":["\u003c/mark\u003e"]},"timeout":"11s","_source":false,"size":10000,"from":0}'
+  [1m[36mConversationPart Load (0.3ms)[0m  [1m[34mSELECT "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."id" IN (23, 26, 1, 16)[0m
+  [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.1ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Conversation Load (0.0ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering conversations/index.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  Rendered conversations/_conversations.html.erb (31.5ms)
+  Rendered conversations/index.html.erb within layouts/application (34.1ms)
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_flash_messages.html.erb (0.9ms)
+Completed 200 OK in 408ms (Views: 176.8ms | Searchkick: 190.0ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/conversations/" for 185.57.4.100 at 2018-12-24 14:50:56 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ConversationsController#index as HTML
+  Rendering conversations/index.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.6ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.1ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  Rendered conversations/_conversations.html.erb (218.4ms)
+  Rendered conversations/index.html.erb within layouts/application (223.0ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_flash_messages.html.erb (0.5ms)
+Completed 200 OK in 1260ms (Views: 1221.4ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/conversations/1" for 185.57.4.100 at 2018-12-24 14:51:00 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering conversations/show.html.erb within layouts/application
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ?[0m  [["conversation_id", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered conversations/show.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_flash_messages.html.erb (0.8ms)
+Completed 200 OK in 129ms (Views: 119.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/conversations/4" for 185.57.4.100 at 2018-12-24 14:51:05 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering conversations/show.html.erb within layouts/application
+  [1m[36mConversationPart Load (0.3ms)[0m  [1m[34mSELECT "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ?[0m  [["conversation_id", 4]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered conversations/show.html.erb within layouts/application (18.7ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_flash_messages.html.erb (0.5ms)
+Completed 200 OK in 137ms (Views: 131.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/conversations/search?utf8=%E2%9C%93&keyword=hi&tag_filter=All&button=" for 185.57.4.100 at 2018-12-24 14:51:13 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#search as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"hi", "tag_filter"=>"All", "button"=>""}
+  [1m[33mConversationPart Search (24.3ms)[0m  curl http://localhost:9200/conversation_parts_development/_search?pretty -H 'Content-Type: application/json' -d '{"query":{"dis_max":{"queries":[{"match":{"sanitized_conversation_part_body.analyzed":{"query":"hi","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"sanitized_conversation_part_body.analyzed":{"query":"hi","boost":10,"operator":"and","analyzer":"searchkick_search2"}}}]}},"highlight":{"fields":{"sanitized_conversation_part_body.analyzed":{}},"fragment_size":0,"pre_tags":["\u003cmark\u003e"],"post_tags":["\u003c/mark\u003e"]},"timeout":"11s","size":10000,"from":0}'
+  Rendering conversations/index.html.erb within layouts/application
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered conversations/_conversations.html.erb (11.6ms)
+  Rendered conversations/index.html.erb within layouts/application (14.1ms)
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `conversation_parts' for nil:NilClass):
+    46:           <% end %>
+    47:           <div class="conversation-creation-date text-left">
+    48:             <small>Created
+    49:               by: <%= conversation.conversation_parts.first.author.name if conversation.conversation_parts.first.author.present? %>
+    50:               , <%= time_ago_in_words(conversation.conversation_parts.first.creation_date) %> ago
+    51:             </small>
+    52:           </div>
+  
+app/views/conversations/_conversations.html.erb:49:in `block in _app_views_conversations__conversations_html_erb___1008612887223538452_70222173697340'
+app/views/conversations/_conversations.html.erb:38:in `each'
+app/views/conversations/_conversations.html.erb:38:in `_app_views_conversations__conversations_html_erb___1008612887223538452_70222173697340'
+app/views/conversations/index.html.erb:2:in `_app_views_conversations_index_html_erb___761813934255205648_70222205992340'
+app/controllers/conversations_controller.rb:46:in `search'
+Started GET "/conversations/search?utf8=%E2%9C%93&keyword=close&tag_filter=All&button=" for 185.57.4.100 at 2018-12-24 14:51:32 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#search as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"close", "tag_filter"=>"All", "button"=>""}
+  [1m[33mConversationPart Search (19.7ms)[0m  curl http://localhost:9200/conversation_parts_development/_search?pretty -H 'Content-Type: application/json' -d '{"query":{"dis_max":{"queries":[{"match":{"sanitized_conversation_part_body.analyzed":{"query":"close","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"sanitized_conversation_part_body.analyzed":{"query":"close","boost":10,"operator":"and","analyzer":"searchkick_search2"}}}]}},"highlight":{"fields":{"sanitized_conversation_part_body.analyzed":{}},"fragment_size":0,"pre_tags":["\u003cmark\u003e"],"post_tags":["\u003c/mark\u003e"]},"timeout":"11s","size":10000,"from":0}'
+  Rendering conversations/index.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered conversations/_conversations.html.erb (8.8ms)
+  Rendered conversations/index.html.erb within layouts/application (11.9ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `conversation_parts' for nil:NilClass):
+    46:           <% end %>
+    47:           <div class="conversation-creation-date text-left">
+    48:             <small>Created
+    49:               by: <%= conversation.conversation_parts.first.author.name if conversation.conversation_parts.first.author.present? %>
+    50:               , <%= time_ago_in_words(conversation.conversation_parts.first.creation_date) %> ago
+    51:             </small>
+    52:           </div>
+  
+app/views/conversations/_conversations.html.erb:49:in `block in _app_views_conversations__conversations_html_erb___1008612887223538452_70222173393620'
+app/views/conversations/_conversations.html.erb:38:in `each'
+app/views/conversations/_conversations.html.erb:38:in `_app_views_conversations__conversations_html_erb___1008612887223538452_70222173393620'
+app/views/conversations/index.html.erb:2:in `_app_views_conversations_index_html_erb___761813934255205648_70222173436260'
+app/controllers/conversations_controller.rb:46:in `search'
+Started GET "/conversations/search?utf8=%E2%9C%93&keyword=testtr&tag_filter=All&button=" for 185.57.4.100 at 2018-12-24 14:52:01 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#search as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"testtr", "tag_filter"=>"All", "button"=>""}
+  [1m[33mConversationPart Search (15.5ms)[0m  curl http://localhost:9200/conversation_parts_development/_search?pretty -H 'Content-Type: application/json' -d '{"query":{"dis_max":{"queries":[{"match":{"sanitized_conversation_part_body.analyzed":{"query":"testtr","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"sanitized_conversation_part_body.analyzed":{"query":"testtr","boost":10,"operator":"and","analyzer":"searchkick_search2"}}}]}},"highlight":{"fields":{"sanitized_conversation_part_body.analyzed":{}},"fragment_size":0,"pre_tags":["\u003cmark\u003e"],"post_tags":["\u003c/mark\u003e"]},"timeout":"11s","size":10000,"from":0}'
+  Rendering conversations/index.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered conversations/_conversations.html.erb (6.6ms)
+  Rendered conversations/index.html.erb within layouts/application (9.8ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `conversation_parts' for nil:NilClass):
+    46:           <% end %>
+    47:           <div class="conversation-creation-date text-left">
+    48:             <small>Created
+    49:               by: <%= conversation.conversation_parts.first.author.name if conversation.conversation_parts.first.author.present? %>
+    50:               , <%= time_ago_in_words(conversation.conversation_parts.first.creation_date) %> ago
+    51:             </small>
+    52:           </div>
+  
+app/views/conversations/_conversations.html.erb:49:in `block in _app_views_conversations__conversations_html_erb___1008612887223538452_70222172939880'
+app/views/conversations/_conversations.html.erb:38:in `each'
+app/views/conversations/_conversations.html.erb:38:in `_app_views_conversations__conversations_html_erb___1008612887223538452_70222172939880'
+app/views/conversations/index.html.erb:2:in `_app_views_conversations_index_html_erb___761813934255205648_70222172974640'
+app/controllers/conversations_controller.rb:46:in `search'
+Started GET "/conversations/search?utf8=%E2%9C%93&keyword=testtr&tag_filter=All&button=" for 185.57.4.100 at 2018-12-24 14:52:30 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+SyntaxError (/Users/leonor/Documents/Oncall conversations search/app/controllers/conversations_controller.rb:187: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/conversations_controller.rb:187: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/conversations" for 185.57.4.100 at 2018-12-24 14:52:48 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+SyntaxError (/Users/leonor/Documents/Oncall conversations search/app/controllers/conversations_controller.rb:187: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/conversations_controller.rb:187: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/conversations" for 185.57.4.100 at 2018-12-24 14:53:15 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#index as HTML
+  Rendering conversations/index.html.erb within layouts/application
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mConversationPart Load (0.3ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  Rendered conversations/_conversations.html.erb (162.2ms)
+  Rendered conversations/index.html.erb within layouts/application (165.3ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_flash_messages.html.erb (0.9ms)
+Completed 200 OK in 371ms (Views: 352.0ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/conversations/search?utf8=%E2%9C%93&keyword=Hi&tag_filter=All&button=" for 185.57.4.100 at 2018-12-24 14:53:19 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#search as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"Hi", "tag_filter"=>"All", "button"=>""}
+  [1m[33mConversationPart Search (16.8ms)[0m  curl http://localhost:9200/conversation_parts_development/_search?pretty -H 'Content-Type: application/json' -d '{"query":{"dis_max":{"queries":[{"match":{"sanitized_conversation_part_body.analyzed":{"query":"hi","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"sanitized_conversation_part_body.analyzed":{"query":"hi","boost":10,"operator":"and","analyzer":"searchkick_search2"}}}]}},"highlight":{"fields":{"sanitized_conversation_part_body.analyzed":{}},"fragment_size":0,"pre_tags":["\u003cmark\u003e"],"post_tags":["\u003c/mark\u003e"]},"timeout":"11s","_source":false,"size":10000,"from":0}'
+  [1m[36mConversationPart Load (0.3ms)[0m  [1m[34mSELECT "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."id" IN (23, 26, 1, 16)[0m
+  [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.4ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Conversation Load (0.0ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering conversations/index.html.erb within layouts/application
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[36mConversationPart Load (0.4ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  Rendered conversations/_conversations.html.erb (33.6ms)
+  Rendered conversations/index.html.erb within layouts/application (37.9ms)
+  Rendered layouts/_navigation.html.erb (1.3ms)
+  Rendered layouts/_flash_messages.html.erb (0.7ms)
+Completed 200 OK in 216ms (Views: 184.3ms | Searchkick: 16.8ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/conversations/search?utf8=%E2%9C%93&keyword=&tag_filter=All&button=" for 185.57.4.100 at 2018-12-24 14:53:23 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#search as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"", "tag_filter"=>"All", "button"=>""}
+  Rendering conversations/index.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.3ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 2], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.6ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 4], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 5], ["LIMIT", 1]]
+  Rendered conversations/_conversations.html.erb (60.4ms)
+  Rendered conversations/index.html.erb within layouts/application (64.3ms)
+  Rendered layouts/_navigation.html.erb (1.2ms)
+  Rendered layouts/_flash_messages.html.erb (0.7ms)
+Completed 200 OK in 262ms (Views: 256.6ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/conversations/search?utf8=%E2%9C%93&keyword=testtr&tag_filter=All&button=" for 185.57.4.100 at 2018-12-24 14:53:38 +0100
+Cannot render console from 185.57.4.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#search as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"testtr", "tag_filter"=>"All", "button"=>""}
+  [1m[33mConversationPart Search (16.3ms)[0m  curl http://localhost:9200/conversation_parts_development/_search?pretty -H 'Content-Type: application/json' -d '{"query":{"dis_max":{"queries":[{"match":{"sanitized_conversation_part_body.analyzed":{"query":"testtr","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"sanitized_conversation_part_body.analyzed":{"query":"testtr","boost":10,"operator":"and","analyzer":"searchkick_search2"}}}]}},"highlight":{"fields":{"sanitized_conversation_part_body.analyzed":{}},"fragment_size":0,"pre_tags":["\u003cmark\u003e"],"post_tags":["\u003c/mark\u003e"]},"timeout":"11s","_source":false,"size":10000,"from":0}'
+  [1m[36mConversationPart Load (0.7ms)[0m  [1m[34mSELECT "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."id" = 14[0m
+  [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering conversations/index.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[36mConversationPart Load (0.9ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? ORDER BY "conversation_parts"."id" ASC LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" INNER JOIN "conversation_tags" ON "tags"."id" = "conversation_tags"."tag_id" WHERE "conversation_tags"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 3], ["LIMIT", 1]]
+  Rendered conversations/_conversations.html.erb (18.9ms)
+  Rendered conversations/index.html.erb within layouts/application (25.4ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_flash_messages.html.erb (0.4ms)
+Completed 200 OK in 223ms (Views: 198.2ms | Searchkick: 16.3ms | ActiveRecord: 2.4ms)
+
+

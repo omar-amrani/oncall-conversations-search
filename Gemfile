@@ -61,6 +61,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  #Aws signed request gem
   gem 'faraday_middleware-aws-sigv4'
 end
 
@@ -76,7 +77,6 @@ end
 
 group :production do
   gem "pg"
-  gem 'faraday_middleware-aws-sigv4'
 end
 #rspec gem
 gem 'rspec-rails'
