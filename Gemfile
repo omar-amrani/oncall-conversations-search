@@ -55,14 +55,17 @@ gem 'fast-stemmer'
 gem 'omniauth-intercom', '~> 0.1.9'
 #gem to fix autoprefixer error
 gem 'mini_racer'
+#Aws signed request gem
+gem 'faraday_middleware-aws-sigv4'
+#Postgres gem
+gem 'pg'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  #Aws signed request gem
-  gem 'faraday_middleware-aws-sigv4'
+
 end
 
 group :development do
@@ -76,7 +79,6 @@ group :development do
 end
 
 group :production do
-  gem "pg"
 end
 #rspec gem
 gem 'rspec-rails'
