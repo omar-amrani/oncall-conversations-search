@@ -36,7 +36,7 @@
   <% end %>
 
   <% obj[:conversations].each do |conversation| %>
-    <% if conversation.conversation_parts.any? %>
+    <% unless conversation.nil? || conversation.conversation_parts.empty? %>
     <div class="col-sm-12">
       <div class="card text-center" style="background-color: #DADADA; border-color: #333333;">
         <div class="card-block">

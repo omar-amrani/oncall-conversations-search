@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6331cb95-e263-4648-b72f-870011b6ece6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/app/views/conversations/_conversations.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/conversations/_conversations.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/development.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db/development.sqlite3" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -46,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/conversations/_conversations.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="66" column="13" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
+            <state relative-caret-position="147">
+              <caret line="38" column="73" selection-start-line="38" selection-start-column="73" selection-end-line="38" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -331,12 +330,12 @@
       <workItem from="1545403835012" duration="1620000" />
       <workItem from="1545406586106" duration="843000" />
       <workItem from="1545501440575" duration="9701000" />
-      <workItem from="1545761473870" duration="792000" />
+      <workItem from="1545761473870" duration="1144000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12956000" />
+    <option name="totallyTimeSpent" value="13308000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -461,8 +460,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/conversations/_conversations.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="66" column="13" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
+        <state relative-caret-position="147">
+          <caret line="38" column="73" selection-start-line="38" selection-start-column="73" selection-end-line="38" selection-end-column="73" />
         </state>
       </provider>
     </entry>
