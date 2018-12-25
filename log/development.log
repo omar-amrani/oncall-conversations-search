@@ -1781,3 +1781,10 @@ Can't verify CSRF token authenticity.
 Completed 200 OK in 1642ms (Views: 0.3ms | Searchkick: 108.1ms | ActiveRecord: 24.4ms)
 
 
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mConversation Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "conversations" WHERE LOWER("conversations"."conversation_id") = LOWER(?) LIMIT ?[0m  [["conversation_id", 1435728828], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "conversations" ("conversation_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["conversation_id", 1435728828], ["created_at", "2018-12-25 18:29:34.516894"], ["updated_at", "2018-12-25 18:29:34.516894"]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mConversationPart Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ? LIMIT ?[0m  [["conversation_id", 7], ["LIMIT", 1]]
+  [1m[36mConversationPart Load (0.2ms)[0m  [1m[34mSELECT "conversation_parts".* FROM "conversation_parts" WHERE "conversation_parts"."conversation_id" = ?[0m  [["conversation_id", 7]]

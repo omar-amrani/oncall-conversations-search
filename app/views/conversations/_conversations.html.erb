@@ -36,10 +36,10 @@
   <% end %>
 
   <% obj[:conversations].each do |conversation| %>
+    <% if conversation.conversation_parts.any? %>
     <div class="col-sm-12">
       <div class="card text-center" style="background-color: #DADADA; border-color: #333333;">
         <div class="card-block">
-          <% if conversation.conversation_parts.any? %>
           <% if obj[:highlights].empty? || obj[:highlights].present? && obj[:highlights][conversation].empty? %>
             <p class="card-text text-left card-margin"><%== Rails::Html::FullSanitizer.new.sanitize(conversation.conversation_parts.first.conversation_part_body) %></p>
           <% else %>
@@ -60,10 +60,10 @@
           <% end %>
           <%= link_to "Show more", conversation_path(conversation), class: "btn btn-primary button-sm" %>
           <%= link_to "Show Original", "https://intercomrades.intercom.com/a/apps/wb586zdy/inbox/inbox/all/conversations/" + conversation.conversation_id.to_s, class: "btn btn-secondary button-sm" %>
-        <% end %>
+
         </div>
       </div>
     </div>
-
+    <% end %>
   <% end %>
 </div>
