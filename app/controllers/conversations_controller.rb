@@ -61,9 +61,9 @@ class ConversationsController < ApplicationController
   def get_conversation
     if conversations_params[:item][:type] == CONVERSATION
       conversation_id = conversations_params[:item][:id]
+      conversation = get_conversation_from_intercom(conversation_id)
       @conversation = Conversation.new(conversation_id: conversation_id)
       @conversation.save
-      conversation = get_conversation_from_intercom(@conversation.conversation_id)
       store_conversation_parts(conversation)
       store_tags(conversation)
       render status: 200, json: {
