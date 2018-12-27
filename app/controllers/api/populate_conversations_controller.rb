@@ -31,21 +31,17 @@ class Api::PopulateConversationsController < ApplicationController
       conversation_message = conversation.conversation_message
       auth = find_or_create_author(conversation.conversation_message.author.id, conversation.conversation_message)
       puts auth.name
-      @conversation_part = ConversationPart.new(conversation: @conversation, author: @author, conversation_part_id: conversation_message.id, conversation_part_body:
+      @conversation_part = ConversationPart.create(conversation: @conversation, author: @author, conversation_part_id: conversation_message.id, conversation_part_body:
           conversation_message.body, sanitized_conversation_part_body: Rails::Html::FullSanitizer.new.sanitize(conversation_message.body), creation_date: Time.at(conversation.created_at))
-      Rails.logger.info(@conversation_part.errors.inspect)
-      @conversation_part.save
       conversation.conversation_parts.each {|conversation_part|
         if conversation_part.author.type != Constants::BOT && conversation_part.body.present? && !conversation_part.body.include?(Constants::APP)
           find_or_create_author(conversation_part.author.id, conversation_part)
-          @conversation_part = ConversationPart.new(conversation: @conversation, author: @author, conversation_part_id: conversation_part.id, conversation_part_body:
+          @conversation_part = ConversationPart.create(conversation: @conversation, author: @author, conversation_part_id: conversation_part.id, conversation_part_body:
               conversation_part.body, sanitized_conversation_part_body: Rails::Html::FullSanitizer.new.sanitize(conversation_part.body), creation_date: Time.at(conversation_part.created_at))
-          Rails.logger.info(@conversation_part.errors.inspect)
-          @conversation_part.save
         end
       }
     rescue Exception => e
-      puts e.to_s
+      Rails.logger.info(e)
     end
   end
 
