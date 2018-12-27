@@ -28,7 +28,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-gem 'intercom', '~> 3.6.2'
+gem 'intercom', '~> 3.7.1'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'font-awesome-rails'
 #pagination gem
