@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6331cb95-e263-4648-b72f-870011b6ece6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/app/controllers/api/populate_conversations_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/populate_conversations_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -45,7 +46,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/api/populate_conversations_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
+            <state relative-caret-position="315">
               <caret line="21" column="87" selection-start-line="21" selection-start-column="87" selection-end-line="21" selection-end-column="87" />
             </state>
           </provider>
@@ -79,7 +80,7 @@
         <entry file="file://$PROJECT_DIR$/config/database.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
-              <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+              <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -103,12 +104,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/models/user.rb" />
-        <option value="$PROJECT_DIR$/config/database.yml" />
         <option value="$PROJECT_DIR$/app/controllers/conversations_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/conversations/_conversations.html.erb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/config/initializers/elasticsearch.rb" />
+        <option value="$PROJECT_DIR$/config/database.yml" />
         <option value="$PROJECT_DIR$/app/controllers/api/populate_conversations_controller.rb" />
       </list>
     </option>
@@ -330,12 +331,12 @@
       <workItem from="1545501440575" duration="9701000" />
       <workItem from="1545761473870" duration="1661000" />
       <workItem from="1545825578314" duration="3960000" />
-      <workItem from="1545924353642" duration="396000" />
+      <workItem from="1545924353642" duration="650000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18181000" />
+    <option name="totallyTimeSpent" value="18435000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -458,13 +459,13 @@
     <entry file="file://$PROJECT_DIR$/config/database.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+          <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/populate_conversations_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
+        <state relative-caret-position="315">
           <caret line="21" column="87" selection-start-line="21" selection-start-column="87" selection-end-line="21" selection-end-column="87" />
         </state>
       </provider>
