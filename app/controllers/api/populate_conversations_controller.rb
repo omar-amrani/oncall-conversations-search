@@ -19,7 +19,7 @@ class Api::PopulateConversationsController < ApplicationController
 
   def get_closed_conversations_list
     conversations_list = []
-    IntercomClient::Client::Intercom.conversations.all.each {|conversation|
+    IntercomClient::Client::Intercom.conversations.find_all(type: 'admin', id: '1729783').each {|conversation|
       conversations_list << conversation.id unless conversation.open
       puts "actual list size is" + conversations_list.length.to_s
     }
