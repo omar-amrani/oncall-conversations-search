@@ -15236,3 +15236,8 @@ Processing by ConversationsController#index as HTML
 Completed 200 OK in 578ms (Views: 540.1ms | ActiveRecord: 14.9ms)
 
 
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeConversationPartsTableToUtf8mb4 (20181228102212)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE conversation_parts CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_bin[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
