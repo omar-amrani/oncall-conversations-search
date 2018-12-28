@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6331cb95-e263-4648-b72f-870011b6ece6" name="Default Changelist" comment="" />
+    <list default="true" id="6331cb95-e263-4648-b72f-870011b6ece6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/controllers/api/populate_conversations_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/populate_conversations_controller.rb" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/log/" />
@@ -31,16 +33,16 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/api/populate_conversations_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="87" selection-start-line="21" selection-start-column="87" selection-end-line="21" selection-end-column="87" />
+            <state relative-caret-position="255">
+              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/migrate/20181228102212_change_conversation_parts_table_to_utf8mb4.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
@@ -116,8 +118,8 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/config/initializers/elasticsearch.rb" />
         <option value="$PROJECT_DIR$/config/database.yml" />
-        <option value="$PROJECT_DIR$/app/controllers/api/populate_conversations_controller.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20181228102212_change_conversation_parts_table_to_utf8mb4.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/api/populate_conversations_controller.rb" />
       </list>
     </option>
   </component>
@@ -160,6 +162,13 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Oncall conversations search" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Oncall conversations search" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="concerns" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Oncall conversations search" type="b2602c69:ProjectViewProjectNode" />
@@ -349,12 +358,12 @@
       <workItem from="1545501440575" duration="9701000" />
       <workItem from="1545761473870" duration="1661000" />
       <workItem from="1545825578314" duration="3960000" />
-      <workItem from="1545924353642" duration="2762000" />
+      <workItem from="1545924353642" duration="3002000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20547000" />
+    <option name="totallyTimeSpent" value="20787000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -481,13 +490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/populate_conversations_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="87" selection-start-line="21" selection-start-column="87" selection-end-line="21" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/schema.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -499,6 +501,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="93" selection-start-line="11" selection-start-column="93" selection-end-line="11" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/populate_conversations_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
         </state>
       </provider>
     </entry>
