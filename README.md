@@ -28,7 +28,7 @@ This will assign a web public URL to your local localhost:3000 address, making i
   ```
   ![image](https://user-images.githubusercontent.com/35232547/50016492-3fdcb500-ffc1-11e8-96df-e1d2354de98c.png)
   
-  The three first variables are used for the Oauth process while the `INTERCOM_TOKEN` is used to interact with the workspace API
+  The three first variables are used for the Oauth process while the `INTERCOM_TOKEN` is used to interact with the workspace API.
   
 
 ## 3. Set up your OAuth redirect URL
@@ -44,7 +44,13 @@ Your webhook URL should have the following format:
 
 ![image](https://user-images.githubusercontent.com/35232547/50017125-2dfc1180-ffc3-11e8-83b7-bdd1f3981c4e.png)
 
-## 5. Install dependencies
+## 5. Set up MYSQL
+Run `brew install mysql` to install mysql. Then you can start mysql server by running `mysql.server start`.
+If you are using any particular username/password for your mysql user, you'll need to update config/database.yml accordingly.
+
+Finally you'll need to call `rails db:create` to create your test and development databases.
+
+## 6. Install dependencies
 Run `bundler` to install dependencies:
 
 ```
@@ -65,7 +71,7 @@ rails db:migrate
 
 
 
-## 6. Set up Elasticsearch for the [Searchkick gem](https://github.com/ankane/searchkick)
+## 7. Set up Elasticsearch for the [Searchkick gem](https://github.com/ankane/searchkick)
  Install Elasticsearch:
  
  ```
@@ -80,7 +86,7 @@ rails db:migrate
  ```
 
 
-## 7.  Run the application
+## 8.  Run the application
 
 `cd` into the root of the project and run `rails server`. This will start the local development server. 
 
