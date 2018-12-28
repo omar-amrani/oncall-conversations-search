@@ -15241,3 +15241,296 @@ Migrating to ChangeConversationPartsTableToUtf8mb4 (20181228102212)
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE conversation_parts CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_bin[0m
   [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (87.0ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT GET_LOCK('1254317368772923245', 0)[0m
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateConversations (20181010204701)
+  [1m[35m (11.9ms)[0m  [1m[35mCREATE TABLE `conversations` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `conversation_id` int, `message` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181010204701')[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeIntegerLimitInConversations (20181010214550)
+  [1m[35m (42.3ms)[0m  [1m[35mALTER TABLE `conversations` CHANGE `conversation_id` `conversation_id` bigint DEFAULT NULL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181010214550')[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveMessageFromConversations (20181014211614)
+  [1m[35m (20.2ms)[0m  [1m[35mALTER TABLE `conversations` DROP `message`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181014211614')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateConversationParts (20181014212959)
+  [1m[35m (14.2ms)[0m  [1m[35mCREATE TABLE `conversation_parts` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `conversation_part_id` bigint, `conversation_part_body` text, `conversation_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_conversation_parts_on_conversation_id`  (`conversation_id`), CONSTRAINT `fk_rails_90c1b51308`
+FOREIGN KEY (`conversation_id`)
+  REFERENCES `conversations` (`id`)
+) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181014212959')[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumToConversationsParts (20181014213844)
+  [1m[35m (19.4ms)[0m  [1m[35mALTER TABLE `conversation_parts` ADD `author_type` varchar(255)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181014213844')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddCreationDateToConversationParts (20181022184712)
+  [1m[35m (16.5ms)[0m  [1m[35mALTER TABLE `conversation_parts` ADD `creation_date` bigint[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181022184712')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeleteCreationDateFromConversationParts (20181022190617)
+  [1m[35m (27.0ms)[0m  [1m[35mALTER TABLE `conversation_parts` DROP `creation_date`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181022190617')[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddCreationDateAttributeToConversationParts (20181022190739)
+  [1m[35m (15.9ms)[0m  [1m[35mALTER TABLE `conversation_parts` ADD `creation_date` varchar(255)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181022190739')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeCreationDateTypeToTimestamp (20181023191359)
+  [1m[35m (36.9ms)[0m  [1m[35mALTER TABLE `conversation_parts` CHANGE `creation_date` `creation_date` Time DEFAULT NULL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181023191359')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeCreationDateTypeToDatetime (20181023192043)
+  [1m[35m (32.5ms)[0m  [1m[35mALTER TABLE `conversation_parts` CHANGE `creation_date` `creation_date` DateTime DEFAULT NULL[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181023192043')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddSanitizedConversationPartBodyToConversationpart (20181102171142)
+  [1m[35m (12.2ms)[0m  [1m[35mALTER TABLE `conversation_parts` ADD `sanitized_conversation_part_body` text[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181102171142')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTags (20181106172839)
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE `tags` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `tag_id` bigint, `name` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181106172839')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAdmins (20181106174219)
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE `admins` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `admin_id` bigint, `name` varchar(255), `image_url` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181106174219')[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateConversationTags (20181106235045)
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE `conversation_tags` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `conversation_id` int, `tag_id` int) ENGINE=InnoDB[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181106235045')[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAuthorTable (20181120102643)
+  [1m[35m (12.6ms)[0m  [1m[35mCREATE TABLE `author` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `type` varchar(255), `author_id` varchar(255), `name` varchar(255), `image_url` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181120102643')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DropProductsTable (20181120103227)
+  [1m[35m (13.4ms)[0m  [1m[35mDROP TABLE `admins`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181120103227')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RenameAuthorTable (20181120104114)
+  [1m[35m (12.9ms)[0m  [1m[35mRENAME TABLE `author` TO `authors`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181120104114')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RenameAuthorTypeColumn (20181120105414)
+  [1m[35m (11.0ms)[0m  [1m[35mALTER TABLE `authors` CHANGE `type` `author_type` varchar(255) DEFAULT NULL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181120105414')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddingOneToManyAssociationforAuthor (20181120160357)
+  [1m[35m (24.9ms)[0m  [1m[35mALTER TABLE `conversation_parts` ADD `author_id` varchar(255)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181120160357')[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeleteAuthorTypeFromConversationPart (20181120160949)
+  [1m[35m (39.3ms)[0m  [1m[35mALTER TABLE `conversation_parts` DROP `author_type`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181120160949')[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20181122140127)
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (15.4ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  [1m[35m (16.9ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) [0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181122140127')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddFirstAndLastNameToUsers (20181122143200)
+  [1m[35m (21.5ms)[0m  [1m[35mALTER TABLE `users` ADD `first_name` varchar(255)[0m
+  [1m[35m (21.3ms)[0m  [1m[35mALTER TABLE `users` ADD `last_name` varchar(255)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181122143200')[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to UpdatingUsersTable (20181204214514)
+  [1m[35m (36.0ms)[0m  [1m[35mALTER TABLE `users` DROP `first_name`[0m
+  [1m[35m (22.6ms)[0m  [1m[35mALTER TABLE `users` DROP `last_name`[0m
+  [1m[35m (16.5ms)[0m  [1m[35mALTER TABLE `users` ADD `name` varchar(255)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181204214514')[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DropUsersTable (20181204214913)
+  [1m[35m (9.3ms)[0m  [1m[35mDROP TABLE `users`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181204214913')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsersTable (20181204215035)
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255), `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181204215035')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeConversationPartsTableToUtf8mb4 (20181228102212)
+  [1m[35m (45.7ms)[0m  [1m[35mALTER TABLE conversation_parts CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_bin[0m
+  [1m[35m (9.9ms)[0m  [1m[35mALTER TABLE conversation_parts MODIFY conversation_part_body TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin[0m
+  [1m[35m (12.7ms)[0m  [1m[35mALTER TABLE conversation_parts MODIFY sanitized_conversation_part_body TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin[0m
+  [1m[35m (39.7ms)[0m  [1m[35mALTER TABLE conversation_parts MODIFY author_id VARCHAR(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181228102212')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2018-12-28 11:18:07', '2018-12-28 11:18:07')[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT RELEASE_LOCK('1254317368772923245')[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2018-12-28 12:24:15 +0100
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ConversationsController#index as HTML
+  Rendering conversations/index.html.erb within layouts/application
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT `tags`.* FROM `tags`[0m
+  [1m[36mConversation Load (0.5ms)[0m  [1m[34mSELECT  `conversations`.* FROM `conversations` LIMIT 10 OFFSET 0[0m
+  Rendered conversations/_conversations.html.erb (19.5ms)
+  Rendered conversations/index.html.erb within layouts/application (26.4ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+  Rendered layouts/_flash_messages.html.erb (0.8ms)
+Completed 200 OK in 1015ms (Views: 971.1ms | ActiveRecord: 4.9ms)
+
+
+Started HEAD "/conversations/webhook" for 34.197.76.213 at 2018-12-28 12:26:31 +0100
+Cannot render console from 34.197.76.213! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#show as */*
+  Parameters: {"id"=>"webhook"}
+  [1m[36mConversation Load (0.5ms)[0m  [1m[34mSELECT  `conversations`.* FROM `conversations` WHERE `conversations`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 21ms (ActiveRecord: 14.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Conversation with 'id'=webhook):
+  
+app/controllers/conversations_controller.rb:57:in `show'
+Started HEAD "/conversations/webhook" for 34.197.76.213 at 2018-12-28 12:26:31 +0100
+Cannot render console from 34.197.76.213! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#show as */*
+  Parameters: {"id"=>"webhook"}
+  [1m[36mConversation Load (1.1ms)[0m  [1m[34mSELECT  `conversations`.* FROM `conversations` WHERE `conversations`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 3ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Conversation with 'id'=webhook):
+  
+app/controllers/conversations_controller.rb:57:in `show'
+Started POST "/conversations/webhook" for 34.197.76.213 at 2018-12-28 12:26:32 +0100
+Cannot render console from 34.197.76.213! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#get_conversation as JSON
+  Parameters: {"type"=>"notification_event", "app_id"=>"brz2bvp4", "data"=>{"type"=>"notification_event_data", "item"=>{"type"=>"ping", "message"=>"something something interzen"}}, "links"=>{}, "id"=>nil, "topic"=>"ping", "delivery_status"=>nil, "delivery_attempts"=>1, "delivered_at"=>0, "first_sent_at"=>1545996392, "created_at"=>1545996392, "self"=>nil, "conversation"=>{"id"=>nil, "created_at"=>1545996392}}
+Can't verify CSRF token authenticity.
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/conversations/webhook" for 34.231.68.152 at 2018-12-28 12:27:10 +0100
+Cannot render console from 34.231.68.152! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#get_conversation as JSON
+  Parameters: {"type"=>"notification_event", "app_id"=>"brz2bvp4", "data"=>{"type"=>"notification_event_data", "item"=>{"type"=>"conversation", "id"=>"20178554733", "created_at"=>1545760007, "updated_at"=>1545996428, "user"=>{"type"=>"lead", "id"=>"5c226c8ed6e29b4a95cff32d", "user_id"=>"a689e7d8-e595-416c-9b98-846e6335ce75", "name"=>"Lime Cone from Bandhagen", "email"=>"", "do_not_track"=>nil}, "assignee"=>{"type"=>"admin", "id"=>"1729783", "name"=>"Omar Amrani", "email"=>"omar.amrani@intercom.io"}, "conversation_message"=>{"type"=>"conversation_message", "id"=>"295627302", "url"=>"http://alpha-omar-blog.herokuapp.com/kb/logout", "subject"=>"", "body"=>"<p>HI</p>", "author"=>{"type"=>"user", "id"=>"5c226c8ed6e29b4a95cff32d"}, "attachments"=>[]}, "conversation_parts"=>{"type"=>"conversation_part.list", "conversation_parts"=>[{"type"=>"conversation_part", "id"=>"2464623446", "part_type"=>"close", "body"=>"<div class=\"intercom-container\"><img src=\"https://gifs.intercomcdn.com/images/7dabe04fe459d388f487819ac639adef/tenor.gif\"></div>", "created_at"=>1545996428, "updated_at"=>1545996428, "notified_at"=>1545996428, "assigned_to"=>nil, "author"=>{"type"=>"admin", "id"=>"1729783", "name"=>"Omar Amrani"}, "attachments"=>[], "external_id"=>nil}], "total_count"=>1}, "open"=>false, "state"=>"closed", "snoozed_until"=>nil, "read"=>false, "metadata"=>{}, "tags"=>{"type"=>"tag.list", "tags"=>[]}, "tags_added"=>{"type"=>"tag.list", "tags"=>[]}, "links"=>{"conversation_web"=>"https://app.intercom.io/a/apps/brz2bvp4/conversations/20178554733"}}}, "links"=>{}, "id"=>"notif_c38ff5a8-a666-4d3d-b739-44e192d48296", "topic"=>"conversation.admin.closed", "delivery_status"=>"pending", "delivery_attempts"=>1, "delivered_at"=>0, "first_sent_at"=>1545996429, "created_at"=>1545996429, "self"=>nil, "conversation"=>{"id"=>"notif_c38ff5a8-a666-4d3d-b739-44e192d48296", "created_at"=>1545996429}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 1045ms (ActiveRecord: 0.0ms)
+
+
+  
+Intercom::AuthenticationError (Unauthorized):
+  
+app/controllers/conversations_controller.rb:115:in `get_conversation_from_intercom'
+app/controllers/conversations_controller.rb:64:in `get_conversation'
+Started POST "/conversations/webhook" for 34.231.68.152 at 2018-12-28 12:28:12 +0100
+Cannot render console from 34.231.68.152! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ConversationsController#get_conversation as JSON
+  Parameters: {"type"=>"notification_event", "app_id"=>"brz2bvp4", "data"=>{"type"=>"notification_event_data", "item"=>{"type"=>"conversation", "id"=>"20178554733", "created_at"=>1545760007, "updated_at"=>1545996428, "user"=>{"type"=>"lead", "id"=>"5c226c8ed6e29b4a95cff32d", "user_id"=>"a689e7d8-e595-416c-9b98-846e6335ce75", "name"=>"Lime Cone from Bandhagen", "email"=>"", "do_not_track"=>nil}, "assignee"=>{"type"=>"admin", "id"=>"1729783", "name"=>"Omar Amrani", "email"=>"omar.amrani@intercom.io"}, "conversation_message"=>{"type"=>"conversation_message", "id"=>"295627302", "url"=>"http://alpha-omar-blog.herokuapp.com/kb/logout", "subject"=>"", "body"=>"<p>HI</p>", "author"=>{"type"=>"user", "id"=>"5c226c8ed6e29b4a95cff32d"}, "attachments"=>[]}, "conversation_parts"=>{"type"=>"conversation_part.list", "conversation_parts"=>[{"type"=>"conversation_part", "id"=>"2464623446", "part_type"=>"close", "body"=>"<div class=\"intercom-container\"><img src=\"https://gifs.intercomcdn.com/images/7dabe04fe459d388f487819ac639adef/tenor.gif\"></div>", "created_at"=>1545996428, "updated_at"=>1545996428, "notified_at"=>1545996428, "assigned_to"=>nil, "author"=>{"type"=>"admin", "id"=>"1729783", "name"=>"Omar Amrani"}, "attachments"=>[], "external_id"=>nil}], "total_count"=>1}, "open"=>false, "state"=>"closed", "snoozed_until"=>nil, "read"=>false, "metadata"=>{}, "tags"=>{"type"=>"tag.list", "tags"=>[]}, "tags_added"=>{"type"=>"tag.list", "tags"=>[]}, "links"=>{"conversation_web"=>"https://app.intercom.io/a/apps/brz2bvp4/conversations/20178554733"}}}, "links"=>{}, "id"=>"notif_c38ff5a8-a666-4d3d-b739-44e192d48296", "topic"=>"conversation.admin.closed", "delivery_status"=>"retry", "delivery_attempts"=>2, "delivered_at"=>0, "first_sent_at"=>1545996432, "created_at"=>1545996429, "self"=>nil, "conversation"=>{"id"=>"notif_c38ff5a8-a666-4d3d-b739-44e192d48296", "created_at"=>1545996429}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 526ms (ActiveRecord: 0.0ms)
+
+
+  
+Intercom::AuthenticationError (Unauthorized):
+  
+app/controllers/conversations_controller.rb:115:in `get_conversation_from_intercom'
+app/controllers/conversations_controller.rb:64:in `get_conversation'
+Started POST "/conversations/webhook" for 34.197.76.213 at 2018-12-28 12:30:52 +0100
+Cannot render console from 34.197.76.213! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ConversationsController#get_conversation as JSON
+  Parameters: {"type"=>"notification_event", "app_id"=>"brz2bvp4", "data"=>{"type"=>"notification_event_data", "item"=>{"type"=>"conversation", "id"=>"20178532322", "created_at"=>1545759808, "updated_at"=>1545996650, "user"=>{"type"=>"lead", "id"=>"5c226c3ab3721821e095c887", "user_id"=>"f7ed80db-6312-4cf1-a897-89e0002b0d6e", "name"=>"Mint Microphone from Bandhagen", "email"=>"", "do_not_track"=>nil}, "assignee"=>{"type"=>"admin", "id"=>"1729783", "name"=>"Omar Amrani", "email"=>"omar.amrani@intercom.io"}, "conversation_message"=>{"type"=>"conversation_message", "id"=>"295626819", "url"=>"http://alpha-omar-blog.herokuapp.com/kb/logout", "subject"=>"", "body"=>"<p>Hi there</p>", "author"=>{"type"=>"user", "id"=>"5c226c3ab3721821e095c887"}, "attachments"=>[]}, "conversation_parts"=>{"type"=>"conversation_part.list", "conversation_parts"=>[{"type"=>"conversation_part", "id"=>"2464634072", "part_type"=>"close", "body"=>"<p>Closing a convo</p>", "created_at"=>1545996650, "updated_at"=>1545996650, "notified_at"=>1545996650, "assigned_to"=>{"type"=>"admin", "id"=>"1729783", "name"=>"Omar Amrani"}, "author"=>{"type"=>"admin", "id"=>"1729783", "name"=>"Omar Amrani"}, "attachments"=>[], "external_id"=>nil}], "total_count"=>1}, "open"=>false, "state"=>"closed", "snoozed_until"=>nil, "read"=>false, "metadata"=>{}, "tags"=>{"type"=>"tag.list", "tags"=>[]}, "tags_added"=>{"type"=>"tag.list", "tags"=>[]}, "links"=>{"conversation_web"=>"https://app.intercom.io/a/apps/brz2bvp4/conversations/20178532322"}}}, "links"=>{}, "id"=>"notif_0b6ecadd-74e1-489e-bf45-6e7a4b284622", "topic"=>"conversation.admin.closed", "delivery_status"=>"pending", "delivery_attempts"=>1, "delivered_at"=>0, "first_sent_at"=>1545996651, "created_at"=>1545996651, "self"=>nil, "conversation"=>{"id"=>"notif_0b6ecadd-74e1-489e-bf45-6e7a4b284622", "created_at"=>1545996651}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mConversation Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM `conversations` WHERE `conversations`.`conversation_id` = 20178532322 LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `conversations` (`conversation_id`, `created_at`, `updated_at`) VALUES (20178532322, '2018-12-28 11:30:53', '2018-12-28 11:30:53')[0m
+  [1m[35m (39.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuthor Load (1.0ms)[0m  [1m[34mSELECT  `authors`.* FROM `authors` WHERE `authors`.`author_id` = '5c226c3ab3721821e095c887' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `authors` WHERE `authors`.`author_id` = '5c226c3ab3721821e095c887' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `authors` (`author_type`, `author_id`, `image_url`) VALUES ('contact', '5c226c3ab3721821e095c887', 'https://static.intercomassets.com/app/pseudonym_avatars_2018/mint-microphone.png')[0m
+  [1m[35m (40.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mConversationPart Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM `conversation_parts` WHERE `conversation_parts`.`conversation_part_id` = 295626819 LIMIT 1[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO `conversation_parts` (`conversation_part_id`, `conversation_part_body`, `conversation_id`, `created_at`, `updated_at`, `creation_date`, `sanitized_conversation_part_body`, `author_id`) VALUES (295626819, '<p>Hi there</p>', 1, '2018-12-28 11:30:53', '2018-12-28 11:30:53', '2018-12-25 17:43:28', 'Hi there', '1')[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[33mConversationPart Store (1156.8ms)[0m  {"id":1}
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT  `authors`.* FROM `authors` WHERE `authors`.`author_id` = '1729783' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM `authors` WHERE `authors`.`author_id` = '1729783' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `authors` (`author_type`, `author_id`, `name`, `image_url`) VALUES ('admin', '1729783', 'Omar Amrani', 'https://static.intercomassets.com/avatars/1729783/square_128/FB_IMG_1515433712219-1516361270.jpg?1516361270')[0m
+  [1m[35m (28.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mConversationPart Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `conversation_parts` WHERE `conversation_parts`.`conversation_part_id` = 2464634072 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `conversation_parts` (`conversation_part_id`, `conversation_part_body`, `conversation_id`, `created_at`, `updated_at`, `creation_date`, `sanitized_conversation_part_body`, `author_id`) VALUES (2464634072, '<p>Closing a convo</p>', 1, '2018-12-28 11:30:55', '2018-12-28 11:30:55', '2018-12-28 11:30:50', 'Closing a convo', '2')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[33mConversationPart Store (66.6ms)[0m  {"id":2}
+Completed 200 OK in 3305ms (Views: 0.3ms | Searchkick: 1223.4ms | ActiveRecord: 175.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-28 12:31:00 +0100
+Processing by ConversationsController#index as HTML
+  Rendering conversations/index.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT `tags`.* FROM `tags`[0m
+  [1m[36mConversation Load (0.6ms)[0m  [1m[34mSELECT  `conversations`.* FROM `conversations` LIMIT 10 OFFSET 0[0m
+  [1m[36mConversationPart Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM `conversation_parts` WHERE `conversation_parts`.`conversation_id` = 1 LIMIT 1[0m
+  [1m[36mConversationPart Load (0.7ms)[0m  [1m[34mSELECT  `conversation_parts`.* FROM `conversation_parts` WHERE `conversation_parts`.`conversation_id` = 1 ORDER BY `conversation_parts`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  `conversation_parts`.* FROM `conversation_parts` WHERE `conversation_parts`.`conversation_id` = 1 ORDER BY `conversation_parts`.`id` ASC LIMIT 1[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mAuthor Load (1.5ms)[0m  [1m[34mSELECT  `authors`.* FROM `authors` WHERE `authors`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE ConversationPart Load (0.0ms)[0m  [1m[34mSELECT  `conversation_parts`.* FROM `conversation_parts` WHERE `conversation_parts`.`conversation_id` = 1 ORDER BY `conversation_parts`.`id` ASC LIMIT 1[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Author Load (0.1ms)[0m  [1m[34mSELECT  `authors`.* FROM `authors` WHERE `authors`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE ConversationPart Load (0.1ms)[0m  [1m[34mSELECT  `conversation_parts`.* FROM `conversation_parts` WHERE `conversation_parts`.`conversation_id` = 1 ORDER BY `conversation_parts`.`id` ASC LIMIT 1[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM `tags` INNER JOIN `conversation_tags` ON `tags`.`id` = `conversation_tags`.`tag_id` WHERE `conversation_tags`.`conversation_id` = 1 LIMIT 1[0m
+  Rendered conversations/_conversations.html.erb (231.1ms)
+  Rendered conversations/index.html.erb within layouts/application (237.6ms)
+  Rendered layouts/_navigation.html.erb (1.3ms)
+  Rendered layouts/_flash_messages.html.erb (1.3ms)
+Completed 200 OK in 1187ms (Views: 1141.8ms | ActiveRecord: 28.3ms)
+
+
+Started GET "/conversations/1" for 127.0.0.1 at 2018-12-28 12:31:03 +0100
+Processing by ConversationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mConversation Load (0.6ms)[0m  [1m[34mSELECT  `conversations`.* FROM `conversations` WHERE `conversations`.`id` = 1 LIMIT 1[0m
+  Rendering conversations/show.html.erb within layouts/application
+  [1m[36mConversationPart Load (0.5ms)[0m  [1m[34mSELECT `conversation_parts`.* FROM `conversation_parts` WHERE `conversation_parts`.`conversation_id` = 1[0m
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT  `authors`.* FROM `authors` WHERE `authors`.`id` = 1 LIMIT 1[0m
+  [1m[36mAuthor Load (2.0ms)[0m  [1m[34mSELECT  `authors`.* FROM `authors` WHERE `authors`.`id` = 2 LIMIT 1[0m
+  Rendered conversations/show.html.erb within layouts/application (13.8ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_flash_messages.html.erb (0.5ms)
+Completed 200 OK in 185ms (Views: 166.7ms | ActiveRecord: 3.6ms)
+
+
